@@ -1,0 +1,10 @@
+$primary-color: #3498db;
+
+.app-container {
+  background-color: red;
+
+  .title {
+    font-size: 2rem;
+    color: darken($primary-color, 10%);
+  }
+}

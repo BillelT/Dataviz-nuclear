@@ -1,7 +1,13 @@
-import "./App.css";
+import "./stylesheets/App.scss";
 
 function App() {
-  return <></>;
+  return (
+    <>
+      <div className="app-container">
+        <div className="title">Test</div>
+      </div>
+    </>
+  );
 }
 
 export default App;
