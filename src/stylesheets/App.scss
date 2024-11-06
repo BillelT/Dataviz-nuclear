@@ -8,3 +8,40 @@ $primary-color: #3498db;
     color: darken($primary-color, 10%);
   }
 }
+
+body {
+  margin: 0;
+}
+
+#map {
+  height: 500px;
+}
+
+.map-container {
+  position: relative;
+}
+
+#legend {
+  background-color: rgba(255, 255, 255, 0.726);
+  padding: 2rem;
+  font-size: 1rem;
+  position: absolute;
+  z-index: 999;
+  bottom: 0;
+  left: 0;
+
+  p {
+    max-width: 200px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    tr {
+      width: fit-content;
+      td {
+      }
+    }
+  }
+
+}

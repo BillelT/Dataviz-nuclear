@@ -1,11 +1,9 @@
 import "./stylesheets/App.scss";
-
+import EuropeMap from "./components/EuropeMap";
 function App() {
   return (
     <>
-      <div className="app-container">
-        <div className="title">Test</div>
-      </div>
+      <EuropeMap />
     </>
   );
 }

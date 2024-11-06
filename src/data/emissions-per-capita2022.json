@@ -1,0 +1,922 @@
+{
+  "Africa": {
+    "AFG": "",
+    "co2": "0.99422127"
+  },
+  "Albania": {
+    "AFG": "ALB",
+    "co2": "1.7432004"
+  },
+  "Algeria": {
+    "AFG": "DZA",
+    "co2": "3.9272263"
+  },
+  "Andorra": {
+    "AFG": "AND",
+    "co2": "4.6171236"
+  },
+  "Angola": {
+    "AFG": "AGO",
+    "co2": "0.45155162"
+  },
+  "Anguilla": {
+    "AFG": "AIA",
+    "co2": "8.752724"
+  },
+  "Antigua and Barbuda": {
+    "AFG": "ATG",
+    "co2": "6.4218745"
+  },
+  "Argentina": {
+    "AFG": "ARG",
+    "co2": "4.2378173"
+  },
+  "Armenia": {
+    "AFG": "ARM",
+    "co2": "2.3045583"
+  },
+  "Aruba": {
+    "AFG": "ABW",
+    "co2": "8.133404"
+  },
+  "Asia": {
+    "AFG": "",
+    "co2": "4.611434"
+  },
+  "Asia (excl. China and India)": {
+    "AFG": "",
+    "co2": "4.017375"
+  },
+  "Australia": {
+    "AFG": "AUS",
+    "co2": "14.985412"
+  },
+  "Austria": {
+    "AFG": "AUT",
+    "co2": "6.8781943"
+  },
+  "Azerbaijan": {
+    "AFG": "AZE",
+    "co2": "3.6746833"
+  },
+  "Bahamas": {
+    "AFG": "BHS",
+    "co2": "5.1708703"
+  },
+  "Bahrain": {
+    "AFG": "BHR",
+    "co2": "25.672274"
+  },
+  "Bangladesh": {
+    "AFG": "BGD",
+    "co2": "0.5964455"
+  },
+  "Barbados": {
+    "AFG": "BRB",
+    "co2": "4.3772573"
+  },
+  "Belarus": {
+    "AFG": "BLR",
+    "co2": "6.1669006"
+  },
+  "Belgium": {
+    "AFG": "BEL",
+    "co2": "7.6875386"
+  },
+  "Belize": {
+    "AFG": "BLZ",
+    "co2": "1.7894346"
+  },
+  "Benin": {
+    "AFG": "BEN",
+    "co2": "0.631487"
+  },
+  "Bermuda": {
+    "AFG": "BMU",
+    "co2": "6.9370627"
+  },
+  "Bhutan": {
+    "AFG": "BTN",
+    "co2": "1.3489918"
+  },
+  "Bolivia": {
+    "AFG": "BOL",
+    "co2": "1.7583066"
+  },
+  "Bonaire Sint Eustatius and Saba": {
+    "AFG": "BES",
+    "co2": "4.083284"
+  },
+  "Bosnia and Herzegovina": {
+    "AFG": "BIH",
+    "co2": "6.1034565"
+  },
+  "Botswana": {
+    "AFG": "BWA",
+    "co2": "2.838951"
+  },
+  "Brazil": {
+    "AFG": "BRA",
+    "co2": "2.2454574"
+  },
+  "British Virgin Islands": {
+    "AFG": "VGB",
+    "co2": "5.0039577"
+  },
+  "Brunei": {
+    "AFG": "BRN",
+    "co2": "23.950201"
+  },
+  "Bulgaria": {
+    "AFG": "BGR",
+    "co2": "6.8044534"
+  },
+  "Burkina Faso": {
+    "AFG": "BFA",
+    "co2": "0.26295447"
+  },
+  "Burundi": {
+    "AFG": "BDI",
+    "co2": "0.06194545"
+  },
+  "Cambodia": {
+    "AFG": "KHM",
+    "co2": "1.1900775"
+  },
+  "Cameroon": {
+    "AFG": "CMR",
+    "co2": "0.34292704"
+  },
+  "Canada": {
+    "AFG": "CAN",
+    "co2": "14.249212"
+  },
+  "Cape Verde": {
+    "AFG": "CPV",
+    "co2": "0.9588915"
+  },
+  "Central African Republic": {
+    "AFG": "CAF",
+    "co2": "0.040548485"
+  },
+  "Chad": {
+    "AFG": "TCD",
+    "co2": "0.13367727"
+  },
+  "Chile": {
+    "AFG": "CHL",
+    "co2": "4.3041654"
+  },
+  "China": {
+    "AFG": "CHN",
+    "co2": "7.992761"
+  },
+  "Colombia": {
+    "AFG": "COL",
+    "co2": "1.9223082"
+  },
+  "Comoros": {
+    "AFG": "COM",
+    "co2": "0.49327007"
+  },
+  "Congo": {
+    "AFG": "COG",
+    "co2": "1.2447897"
+  },
+  "Cook Islands": {
+    "AFG": "COK",
+    "co2": "3.9950094"
+  },
+  "Costa Rica": {
+    "AFG": "CRI",
+    "co2": "1.5226681"
+  },
+  "Cote d'Ivoire": {
+    "AFG": "CIV",
+    "co2": "0.41668788"
+  },
+  "Croatia": {
+    "AFG": "HRV",
+    "co2": "4.348515"
+  },
+  "Cuba": {
+    "AFG": "CUB",
+    "co2": "1.8659163"
+  },
+  "Curacao": {
+    "AFG": "CUW",
+    "co2": "9.189007"
+  },
+  "Cyprus": {
+    "AFG": "CYP",
+    "co2": "5.616782"
+  },
+  "Czechia": {
+    "AFG": "CZE",
+    "co2": "9.3357525"
+  },
+  "Democratic Republic of Congo": {
+    "AFG": "COD",
+    "co2": "0.036375992"
+  },
+  "Denmark": {
+    "AFG": "DNK",
+    "co2": "4.940161"
+  },
+  "Djibouti": {
+    "AFG": "DJI",
+    "co2": "0.40418932"
+  },
+  "Dominica": {
+    "AFG": "DMA",
+    "co2": "2.1058853"
+  },
+  "Dominican Republic": {
+    "AFG": "DOM",
+    "co2": "2.1051137"
+  },
+  "East Timor": {
+    "AFG": "TLS",
+    "co2": "0.49869007"
+  },
+  "Ecuador": {
+    "AFG": "ECU",
+    "co2": "2.3117273"
+  },
+  "Egypt": {
+    "AFG": "EGY",
+    "co2": "2.333106"
+  },
+  "El Salvador": {
+    "AFG": "SLV",
+    "co2": "1.2174718"
+  },
+  "Equatorial Guinea": {
+    "AFG": "GNQ",
+    "co2": "3.0307202"
+  },
+  "Eritrea": {
+    "AFG": "ERI",
+    "co2": "0.18914719"
+  },
+  "Estonia": {
+    "AFG": "EST",
+    "co2": "7.77628"
+  },
+  "Eswatini": {
+    "AFG": "SWZ",
+    "co2": "1.0527312"
+  },
+  "Ethiopia": {
+    "AFG": "ETH",
+    "co2": "0.15458965"
+  },
+  "Europe": {
+    "AFG": "",
+    "co2": "6.8578663"
+  },
+  "Europe (excl. EU-27)": {
+    "AFG": "",
+    "co2": "7.886797"
+  },
+  "Europe (excl. EU-28)": {
+    "AFG": "",
+    "co2": "8.817789"
+  },
+  "European Union (27)": {
+    "AFG": "",
+    "co2": "6.1743994"
+  },
+  "European Union (28)": {
+    "AFG": "",
+    "co2": "5.983708"
+  },
+  "Faroe Islands": {
+    "AFG": "FRO",
+    "co2": "14.084624"
+  },
+  "Fiji": {
+    "AFG": "FJI",
+    "co2": "1.1550449"
+  },
+  "Finland": {
+    "AFG": "FIN",
+    "co2": "6.5267396"
+  },
+  "France": {
+    "AFG": "FRA",
+    "co2": "4.603891"
+  },
+  "French Polynesia": {
+    "AFG": "PYF",
+    "co2": "2.8509297"
+  },
+  "Gabon": {
+    "AFG": "GAB",
+    "co2": "2.3882635"
+  },
+  "Gambia": {
+    "AFG": "GMB",
+    "co2": "0.2847278"
+  },
+  "Georgia": {
+    "AFG": "GEO",
+    "co2": "2.962545"
+  },
+  "Germany": {
+    "AFG": "DEU",
+    "co2": "7.9837584"
+  },
+  "Ghana": {
+    "AFG": "GHA",
+    "co2": "0.6215505"
+  },
+  "Greece": {
+    "AFG": "GRC",
+    "co2": "5.7451057"
+  },
+  "Greenland": {
+    "AFG": "GRL",
+    "co2": "10.473997"
+  },
+  "Grenada": {
+    "AFG": "GRD",
+    "co2": "2.7133646"
+  },
+  "Guatemala": {
+    "AFG": "GTM",
+    "co2": "1.0756185"
+  },
+  "Guinea": {
+    "AFG": "GIN",
+    "co2": "0.35742033"
+  },
+  "Guinea-Bissau": {
+    "AFG": "GNB",
+    "co2": "0.15518051"
+  },
+  "Guyana": {
+    "AFG": "GUY",
+    "co2": "4.3736935"
+  },
+  "Haiti": {
+    "AFG": "HTI",
+    "co2": "0.21119381"
+  },
+  "High-income countries": {
+    "AFG": "",
+    "co2": "10.132565"
+  },
+  "Honduras": {
+    "AFG": "HND",
+    "co2": "1.0696708"
+  },
+  "Hong Kong": {
+    "AFG": "HKG",
+    "co2": "4.081913"
+  },
+  "Hungary": {
+    "AFG": "HUN",
+    "co2": "4.449911"
+  },
+  "Iceland": {
+    "AFG": "ISL",
+    "co2": "9.499798"
+  },
+  "India": {
+    "AFG": "IND",
+    "co2": "1.9966822"
+  },
+  "Indonesia": {
+    "AFG": "IDN",
+    "co2": "2.6456614"
+  },
+  "Iran": {
+    "AFG": "IRN",
+    "co2": "7.7993317"
+  },
+  "Iraq": {
+    "AFG": "IRQ",
+    "co2": "4.024638"
+  },
+  "Ireland": {
+    "AFG": "IRL",
+    "co2": "7.7211185"
+  },
+  "Israel": {
+    "AFG": "ISR",
+    "co2": "6.208912"
+  },
+  "Italy": {
+    "AFG": "ITA",
+    "co2": "5.726825"
+  },
+  "Jamaica": {
+    "AFG": "JAM",
+    "co2": "2.2945588"
+  },
+  "Japan": {
+    "AFG": "JPN",
+    "co2": "8.501681"
+  },
+  "Jordan": {
+    "AFG": "JOR",
+    "co2": "2.0301995"
+  },
+  "Kazakhstan": {
+    "AFG": "KAZ",
+    "co2": "13.979704"
+  },
+  "Kenya": {
+    "AFG": "KEN",
+    "co2": "0.45998666"
+  },
+  "Kiribati": {
+    "AFG": "KIR",
+    "co2": "0.5184742"
+  },
+  "Kosovo": {
+    "AFG": "OWID_KOS",
+    "co2": "4.830646"
+  },
+  "Kuwait": {
+    "AFG": "KWT",
+    "co2": "25.578102"
+  },
+  "Kyrgyzstan": {
+    "AFG": "KGZ",
+    "co2": "1.4251612"
+  },
+  "Laos": {
+    "AFG": "LAO",
+    "co2": "3.0803475"
+  },
+  "Latvia": {
+    "AFG": "LVA",
+    "co2": "3.561689"
+  },
+  "Lebanon": {
+    "AFG": "LBN",
+    "co2": "4.3543963"
+  },
+  "Lesotho": {
+    "AFG": "LSO",
+    "co2": "1.3594668"
+  },
+  "Liberia": {
+    "AFG": "LBR",
+    "co2": "0.1653753"
+  },
+  "Libya": {
+    "AFG": "LBY",
+    "co2": "9.242238"
+  },
+  "Liechtenstein": {
+    "AFG": "LIE",
+    "co2": "3.8097827"
+  },
+  "Lithuania": {
+    "AFG": "LTU",
+    "co2": "4.606163"
+  },
+  "Low-income countries": {
+    "AFG": "",
+    "co2": "0.28005043"
+  },
+  "Lower-middle-income countries": {
+    "AFG": "",
+    "co2": "1.777996"
+  },
+  "Luxembourg": {
+    "AFG": "LUX",
+    "co2": "11.618432"
+  },
+  "Macao": {
+    "AFG": "MAC",
+    "co2": "1.5127679"
+  },
+  "Madagascar": {
+    "AFG": "MDG",
+    "co2": "0.14871116"
+  },
+  "Malawi": {
+    "AFG": "MWI",
+    "co2": "0.10262384"
+  },
+  "Malaysia": {
+    "AFG": "MYS",
+    "co2": "8.576508"
+  },
+  "Maldives": {
+    "AFG": "MDV",
+    "co2": "3.2475724"
+  },
+  "Mali": {
+    "AFG": "MLI",
+    "co2": "0.31153768"
+  },
+  "Malta": {
+    "AFG": "MLT",
+    "co2": "3.1035979"
+  },
+  "Marshall Islands": {
+    "AFG": "MHL",
+    "co2": "3.6353714"
+  },
+  "Mauritania": {
+    "AFG": "MRT",
+    "co2": "0.957337"
+  },
+  "Mauritius": {
+    "AFG": "MUS",
+    "co2": "3.2697906"
+  },
+  "Mexico": {
+    "AFG": "MEX",
+    "co2": "4.0153365"
+  },
+  "Micronesia (country)": {
+    "AFG": "FSM",
+    "co2": "1.3243006"
+  },
+  "Moldova": {
+    "AFG": "MDA",
+    "co2": "1.6565942"
+  },
+  "Mongolia": {
+    "AFG": "MNG",
+    "co2": "11.150772"
+  },
+  "Montenegro": {
+    "AFG": "MNE",
+    "co2": "3.6558185"
+  },
+  "Montserrat": {
+    "AFG": "MSR",
+    "co2": "4.8447766"
+  },
+  "Morocco": {
+    "AFG": "MAR",
+    "co2": "1.8263615"
+  },
+  "Mozambique": {
+    "AFG": "MOZ",
+    "co2": "0.24274588"
+  },
+  "Myanmar": {
+    "AFG": "MMR",
+    "co2": "0.6445672"
+  },
+  "Namibia": {
+    "AFG": "NAM",
+    "co2": "1.5399038"
+  },
+  "Nauru": {
+    "AFG": "NRU",
+    "co2": "4.1700416"
+  },
+  "Nepal": {
+    "AFG": "NPL",
+    "co2": "0.5074035"
+  },
+  "Netherlands": {
+    "AFG": "NLD",
+    "co2": "7.1372175"
+  },
+  "New Caledonia": {
+    "AFG": "NCL",
+    "co2": "17.641167"
+  },
+  "New Zealand": {
+    "AFG": "NZL",
+    "co2": "6.212154"
+  },
+  "Nicaragua": {
+    "AFG": "NIC",
+    "co2": "0.79879653"
+  },
+  "Niger": {
+    "AFG": "NER",
+    "co2": "0.116688"
+  },
+  "Nigeria": {
+    "AFG": "NGA",
+    "co2": "0.5891771"
+  },
+  "Niue": {
+    "AFG": "NIU",
+    "co2": "3.8729508"
+  },
+  "North America": {
+    "AFG": "",
+    "co2": "10.5346775"
+  },
+  "North America (excl. USA)": {
+    "AFG": "",
+    "co2": "4.741475"
+  },
+  "North Korea": {
+    "AFG": "PRK",
+    "co2": "1.9513915"
+  },
+  "North Macedonia": {
+    "AFG": "MKD",
+    "co2": "3.6245701"
+  },
+  "Norway": {
+    "AFG": "NOR",
+    "co2": "7.5093055"
+  },
+  "Oceania": {
+    "AFG": "",
+    "co2": "9.85179"
+  },
+  "Oman": {
+    "AFG": "OMN",
+    "co2": "15.730261"
+  },
+  "Pakistan": {
+    "AFG": "PAK",
+    "co2": "0.84893465"
+  },
+  "Palau": {
+    "AFG": "PLW",
+    "co2": "12.123921"
+  },
+  "Palestine": {
+    "AFG": "PSE",
+    "co2": "0.6660658"
+  },
+  "Panama": {
+    "AFG": "PAN",
+    "co2": "2.699258"
+  },
+  "Papua New Guinea": {
+    "AFG": "PNG",
+    "co2": "0.77131313"
+  },
+  "Paraguay": {
+    "AFG": "PRY",
+    "co2": "1.3299496"
+  },
+  "Peru": {
+    "AFG": "PER",
+    "co2": "1.7891879"
+  },
+  "Philippines": {
+    "AFG": "PHL",
+    "co2": "1.3014648"
+  },
+  "Poland": {
+    "AFG": "POL",
+    "co2": "8.106886"
+  },
+  "Portugal": {
+    "AFG": "PRT",
+    "co2": "4.050785"
+  },
+  "Qatar": {
+    "AFG": "QAT",
+    "co2": "37.601273"
+  },
+  "Romania": {
+    "AFG": "ROU",
+    "co2": "3.739777"
+  },
+  "Russia": {
+    "AFG": "RUS",
+    "co2": "11.416899"
+  },
+  "Rwanda": {
+    "AFG": "RWA",
+    "co2": "0.112346195"
+  },
+  "Saint Helena": {
+    "AFG": "SHN",
+    "co2": "3.2986484"
+  },
+  "Saint Kitts and Nevis": {
+    "AFG": "KNA",
+    "co2": "4.708081"
+  },
+  "Saint Lucia": {
+    "AFG": "LCA",
+    "co2": "2.6149206"
+  },
+  "Saint Pierre and Miquelon": {
+    "AFG": "SPM",
+    "co2": "10.293288"
+  },
+  "Saint Vincent and the Grenadines": {
+    "AFG": "VCT",
+    "co2": "2.2964725"
+  },
+  "Samoa": {
+    "AFG": "WSM",
+    "co2": "1.1218625"
+  },
+  "Sao Tome and Principe": {
+    "AFG": "STP",
+    "co2": "0.5816142"
+  },
+  "Saudi Arabia": {
+    "AFG": "SAU",
+    "co2": "18.197495"
+  },
+  "Senegal": {
+    "AFG": "SEN",
+    "co2": "0.6738352"
+  },
+  "Serbia": {
+    "AFG": "SRB",
+    "co2": "6.024712"
+  },
+  "Seychelles": {
+    "AFG": "SYC",
+    "co2": "6.1495123"
+  },
+  "Sierra Leone": {
+    "AFG": "SLE",
+    "co2": "0.13124847"
+  },
+  "Singapore": {
+    "AFG": "SGP",
+    "co2": "8.911513"
+  },
+  "Sint Maarten (Dutch part)": {
+    "AFG": "SXM",
+    "co2": "14.352394"
+  },
+  "Slovakia": {
+    "AFG": "SVK",
+    "co2": "6.051555"
+  },
+  "Slovenia": {
+    "AFG": "SVN",
+    "co2": "5.9979916"
+  },
+  "Solomon Islands": {
+    "AFG": "SLB",
+    "co2": "0.41232163"
+  },
+  "Somalia": {
+    "AFG": "SOM",
+    "co2": "0.03676208"
+  },
+  "South Africa": {
+    "AFG": "ZAF",
+    "co2": "6.7461643"
+  },
+  "South America": {
+    "AFG": "",
+    "co2": "2.4865332"
+  },
+  "South Korea": {
+    "AFG": "KOR",
+    "co2": "11.598764"
+  },
+  "South Sudan": {
+    "AFG": "SSD",
+    "co2": "0.1680176"
+  },
+  "Spain": {
+    "AFG": "ESP",
+    "co2": "5.1644425"
+  },
+  "Sri Lanka": {
+    "AFG": "LKA",
+    "co2": "0.7936504"
+  },
+  "Sudan": {
+    "AFG": "SDN",
+    "co2": "0.4696261"
+  },
+  "Suriname": {
+    "AFG": "SUR",
+    "co2": "5.8029985"
+  },
+  "Sweden": {
+    "AFG": "SWE",
+    "co2": "3.6069093"
+  },
+  "Switzerland": {
+    "AFG": "CHE",
+    "co2": "4.0478554"
+  },
+  "Syria": {
+    "AFG": "SYR",
+    "co2": "1.2490375"
+  },
+  "Taiwan": {
+    "AFG": "TWN",
+    "co2": "11.630868"
+  },
+  "Tajikistan": {
+    "AFG": "TJK",
+    "co2": "1.0064901"
+  },
+  "Tanzania": {
+    "AFG": "TZA",
+    "co2": "0.23771806"
+  },
+  "Thailand": {
+    "AFG": "THA",
+    "co2": "3.7762568"
+  },
+  "Togo": {
+    "AFG": "TGO",
+    "co2": "0.2910665"
+  },
+  "Tonga": {
+    "AFG": "TON",
+    "co2": "1.7686282"
+  },
+  "Trinidad and Tobago": {
+    "AFG": "TTO",
+    "co2": "22.423758"
+  },
+  "Tunisia": {
+    "AFG": "TUN",
+    "co2": "2.879285"
+  },
+  "Turkey": {
+    "AFG": "TUR",
+    "co2": "5.1052055"
+  },
+  "Turkmenistan": {
+    "AFG": "TKM",
+    "co2": "11.03418"
+  },
+  "Turks and Caicos Islands": {
+    "AFG": "TCA",
+    "co2": "7.636793"
+  },
+  "Tuvalu": {
+    "AFG": "TUV",
+    "co2": "1.0004411"
+  },
+  "Uganda": {
+    "AFG": "UGA",
+    "co2": "0.12744623"
+  },
+  "Ukraine": {
+    "AFG": "UKR",
+    "co2": "3.5578535"
+  },
+  "United Arab Emirates": {
+    "AFG": "ARE",
+    "co2": "25.833244"
+  },
+  "United Kingdom": {
+    "AFG": "GBR",
+    "co2": "4.7201805"
+  },
+  "United States": {
+    "AFG": "USA",
+    "co2": "14.949616"
+  },
+  "Upper-middle-income countries": {
+    "AFG": "",
+    "co2": "6.2268133"
+  },
+  "Uruguay": {
+    "AFG": "URY",
+    "co2": "2.3060381"
+  },
+  "Uzbekistan": {
+    "AFG": "UZB",
+    "co2": "3.4830604"
+  },
+  "Vanuatu": {
+    "AFG": "VUT",
+    "co2": "0.6363055"
+  },
+  "Venezuela": {
+    "AFG": "VEN",
+    "co2": "2.7168686"
+  },
+  "Vietnam": {
+    "AFG": "VNM",
+    "co2": "3.4995174"
+  },
+  "Wallis and Futuna": {
+    "AFG": "WLF",
+    "co2": "2.2819076"
+  },
+  "World": {
+    "AFG": "OWID_WRL",
+    "co2": "4.658219"
+  },
+  "Yemen": {
+    "AFG": "YEM",
+    "co2": "0.33701748"
+  },
+  "Zambia": {
+    "AFG": "ZMB",
+    "co2": "0.44570068"
+  },
+  "Zimbabwe": {
+    "AFG": "ZWE",
+    "co2": "0.542628"
+  }
+}
