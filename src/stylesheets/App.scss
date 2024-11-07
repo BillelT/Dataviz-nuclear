@@ -1,3 +1,34 @@
+/** Fonts **/
+// Archivo
+@font-face {
+  font-family: Archivo;
+  font-weight: 900;
+  src: url(../../public/fonts/Archivo/Archivo-Black.ttf);
+}
+@font-face {
+  font-family: Archivo;
+  font-weight: 700;
+  src: url(../../public/fonts/Archivo/Archivo-Bold.ttf);
+}
+@font-face {
+  font-family: Archivo;
+  font-weight: 600;
+  src: url(../../public/fonts/Archivo/Archivo-SemiBold.ttf);
+}
+
+// Nimbus
+@font-face {
+  font-family: Archivo;
+  font-weight: 700;
+  src: url(../../public/fonts/Nimbus/NimbusSanL-Bol.otf);
+}
+@font-face {
+  font-family: Archivo;
+  font-weight: 400;
+  src: url(../../public/fonts/Nimbus/NimbusSanL-Reg.otf);
+}
+
+// Mains Colors Variables
 $white: #f7f7ff;
 $black: #08090a;
 $darkgreen: #135338;
@@ -12,6 +43,72 @@ $energy-sunny: #e09706;
 $energy-wind: #12de9a;
 $energy-other: #a106ef;
 
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style-type: none;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; // À modifier
+}
+
 body {
   margin: 0;
+}
+
+.container {
+  padding: 0 80px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+a {
+  color: white;
+}
+
+.darkgreen-bg {
+  background-color: $darkgreen;
+  color: white;
+}
+
+.lime-text {
+  color: $lime;
+}
+
+h1 {
+  font-size: 100px;
+}
+
+.row-gap-32 {
+  row-gap: 32px;
+}
+
+/**
+Padding
+**/
+
+.p-top-bot-128 {
+  padding-top: 128px;
+  padding-bottom: 128px;
+}
+
+.p-top-bot-256 {
+  padding-top: 256px;
+  padding-bottom: 256px;
+}
+
+/**
+  Grid-column
+**/
+
+.grid-col-sm-12-ls-1-9 {
+  grid-column: 1/9;
+}
+
+@media screen and (max-width: 760px) {
+  .grid-col-sm-12-ls-1-9 {
+    grid-column: 1/13;
+  }
 }

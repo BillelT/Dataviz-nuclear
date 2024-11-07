@@ -1,11 +1,16 @@
+import Header from "./components/Header.jsx";
+import Hero from "./components/hero.jsx";
+import EuropeMap from "./components/EuropeMap.jsx";
+import Cost from "./components/Cost.jsx";
 import "./stylesheets/App.scss";
-import EuropeMap from "./components/EuropeMap";
-import LineChart from "./components/LineChart";
+
 function App() {
   return (
     <>
-      {/* <Chart /> */}
+      <Header />
+      <Hero />
       <EuropeMap />
+      <Cost />
     </>
   );
 }

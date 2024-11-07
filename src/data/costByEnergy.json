@@ -1,0 +1,80 @@
+{
+  "lightParis": {
+    "1": {
+      "cost": 20,
+      "type": "le charbon"
+    },
+    "2": {
+      "cost": 20,
+      "type": "charbon"
+    },
+    "3": {
+      "cost": 20,
+      "type": "charbon"
+    },
+    "4": {
+      "cost": 20,
+      "type": "charbon"
+    },
+    "5": {
+      "cost": 20,
+      "type": "charbon"
+    },
+    "6": {
+      "cost": 20,
+      "type": "charbon"
+    }
+  },
+  "yearShower": {
+    "1": {
+      "cost": 20,
+      "type": "charbon"
+    },
+    "2": {
+      "cost": 20,
+      "type": "charbon"
+    },
+    "3": {
+      "cost": 20,
+      "type": "charbon"
+    },
+    "4": {
+      "cost": 20,
+      "type": "charbon"
+    },
+    "5": {
+      "cost": 20,
+      "type": "charbon"
+    },
+    "6": {
+      "cost": 20,
+      "type": "charbon"
+    }
+  },
+  "yearPhone": {
+    "1": {
+      "cost": 20,
+      "type": "charbon"
+    },
+    "2": {
+      "cost": 20,
+      "type": "charbon"
+    },
+    "3": {
+      "cost": 20,
+      "type": "charbon"
+    },
+    "4": {
+      "cost": 20,
+      "type": "charbon"
+    },
+    "5": {
+      "cost": 20,
+      "type": "charbon"
+    },
+    "6": {
+      "cost": 20,
+      "type": "charbon"
+    }
+  }
+}
