@@ -1,0 +1,20 @@
+.container{
+    width: auto;
+    height: auto;
+    margin: 128px 80px;
+    .graph{
+        max-width: 955px;
+        max-height: 500px;
+        padding-bottom: 32px;
+    }
+    .article{
+        max-width: 955px;
+        height: auto;
+        h2{
+            padding-bottom: 28px;
+        }
+        p{
+            padding-bottom: 38px;
+        }
+    }
+}

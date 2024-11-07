@@ -4,8 +4,8 @@ import LineChart from "./components/LineChart";
 function App() {
   return (
     <>
-      {/* <Chart /> */}
       <EuropeMap />
+      <Chart />
     </>
   );
 }
