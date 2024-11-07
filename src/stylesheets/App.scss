@@ -13,6 +13,14 @@ body {
   margin: 0;
 }
 
+svg path {
+  transition: all 0.3s ease;
+
+  &:hover {
+    stroke: #000;
+  }
+}
+
 #map {
   height: 500px;
 }
@@ -33,13 +41,29 @@ body {
   p {
     max-width: 200px;
   }
+
   table {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
     width: 100%;
     border-collapse: collapse;
-    margin-top: 1rem;
+
+    thead {
+      margin-bottom: 1rem;
+      max-width: 180px;
+    }
+
     tr {
       width: fit-content;
+
       td {
+        padding-right: 1.3rem;
+        text-align: center;
+
+        &.color {
+          width: 100%;
+        }
       }
     }
   }

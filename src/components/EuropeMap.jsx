@@ -5,8 +5,9 @@ import { useRef, useEffect } from "react";
 import geojsonFeature from "../data/europe.json";
 import euroCountries from "../data/euro-countries.json";
 import emissions from "../data/emissions-per-capita2022.json";
+import mix from "../data/mix-energy-type-countries.json";
 
-function EuropeMap() {
+export default function EuropeMap() {
   const mapRef = useRef(null);
   function getColor(value) {
     if (value === 0 || value === "undefined" || value === null) {
@@ -51,7 +52,6 @@ function EuropeMap() {
           }
         }
       });
-      console.log(countriesFiltered);
       function getEmission(country) {
         if (countriesFiltered.includes(country)) {
           for (let key in emissions) {
@@ -70,12 +70,22 @@ function EuropeMap() {
           return 0;
         }
       }
+
+      var geojsonMarkerOptions = {
+        radius: 8,
+        fillColor: "#ff7800",
+        color: "#000",
+        weight: 1,
+        opacity: 1,
+        fillOpacity: 0.8,
+      };
+
+      console.log(L.geoJSON(geojsonFeature, { style: myStyle }));
       L.geoJSON(geojsonFeature, {
+        // pointToLayer: function (feature, latlng) {
+        //   return L.circleMarker(latlng, geojsonMarkerOptions);
+        // },
         style: function (feature) {
-          // countriesFiltered.forEach((country) => {
-          //   console.log(country);
-          // });
-          // console.log(emissions["Algeria"]["co2"]);
           return {
             fillColor: getColor(
               getEmission(feature.properties.sovereignt) / 9.5
@@ -83,9 +93,23 @@ function EuropeMap() {
             fillOpacity: 0.5,
             color: "rgba(0, 0, 0, 0.23)",
             weight: getWeight(feature.properties.sovereignt),
+            dataValue: getEmission(feature.properties.sovereignt),
           };
         },
-      }).addTo(map);
+      })
+        .bindPopup(function (layer) {
+          return `<b>Pays :</b> ${layer.feature.properties.sovereignt}<br>
+          <b>Émissions :</b> ${
+            layer.options.dataValue === undefined
+              ? "Données non disponible"
+              : layer.options.dataValue === 0
+              ? "Pays hors UE"
+              : `${Number(layer.options.dataValue).toFixed(2)} Tonnes`
+          }<br>
+          <b>Production électrique par type :</b>
+          ${mix[layer.feature.properties.sovereignt]["nuclear"]}% nucléaire`;
+        })
+        .addTo(map);
     }
   }, []);
 
@@ -98,25 +122,25 @@ function EuropeMap() {
           style={{ height: "100vh", width: "100%" }}
         ></div>
         <div id="legend">
-          <p>
-            Émissions de CO₂ par habitant en 2022 dans les pays de l&apos;Union
-            Européenne
-          </p>
           <table>
             <thead>
               <tr>
-                <th>CO₂ (tonnes per capita)</th>
-                <th>Color</th>
+                <th>
+                  {" "}
+                  Émissions de CO₂ par habitant en 2022 dans les pays de
+                  l&apos;Union Européenne (en Tonnes)
+                </th>
               </tr>
             </thead>
             <tbody>
-              {[...Array(11).keys()].map((i) => (
+              {[...Array(10).keys()].map((i) => (
                 <tr key={i + 1}>
                   <td>{i + 1}</td>
                   <td
+                    className="color"
                     style={{
-                      backgroundColor: getColor((i + 1) / 11),
-                      width: "50px",
+                      backgroundColor: getColor((i + 1) / 10),
+                      opacity: 0.5,
                     }}
                   ></td>
                 </tr>
@@ -128,5 +152,3 @@ function EuropeMap() {
     </>
   );
 }
-
-export default EuropeMap;
