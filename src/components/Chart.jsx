@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Line } from "react-chartjs-2";
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from "chart.js";
 import Data from "../data/mix-energie-gkwh.json"; // Assurez-vous que votre JSON est correctement importé
+import "../stylesheets/Chart.scss";
 
 // Enregistrer les composants utilisés de Chart.js
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
@@ -91,10 +92,39 @@ const LineChart = () => {
   };
 
   return (
-    <div>
-      <h2>Émissions de CO2 (g/kWh) des Différentes Sources Énergétiques au Cours du Temps</h2>
-      <Line data={chartData} options={options} />
-    </div>
+    <section className="container">
+      <div className="graph">
+        <Line data={chartData} options={options} />
+      </div>
+      <div className="article">
+        <h2>Émissions de CO2 (g/kWh) des Différentes Sources Énergétiques au Cours du Temps</h2>
+        <p>
+          Depuis la création de l’électricité, la production d'énergie a évolué au fil des années, 
+          chaque source ayant ses avantages et inconvénients en termes d'émissions de CO2. 
+          Le <strong>charbon</strong> reste l’une des plus polluantes avec environ 850 g de CO2 par kWh, 
+          tandis que le <strong>pétrole</strong> émet 590 g par kWh, contribuant aussi fortement au réchauffement climatique. 
+          Le <strong>gaz naturel</strong>, bien que plus "propre" avec environ 510 g de CO2 par kWh, demeure une source de pollution fossile.
+        </p>
+        <p>
+          Les <strong>énergies renouvelables</strong> comme <strong>l'éolien</strong> (environ 250 g de CO2 par kWh) et le <strong>solaire</strong> 
+          (environ 250g de CO2 par kWh) sont des alternatives à faible empreinte carbone, 
+          bien que leur intermittence pose des défis techniques. Le <strong>nucléaire</strong>, avec seulement 4 g de CO2 par kWh, 
+          produit de l'électricité de manière stable et abondante, 
+          mais soulève des questions de sécurité et de gestion des déchets.
+        </p>
+        <p>
+          Aujourd'hui, face à l'urgence <strong>climatique</strong>, les énergies fossiles sont progressivement remplacées par 
+          des <strong>sources renouvelables</strong> et le <strong>nucléaire</strong>, permettant de réduire les émissions et de 
+          favoriser une transition énergétique vers un avenir plus <strong>durable</strong>.
+        </p>
+        <h3>Le Nucléaire: Un frein historique</h3>
+        <p>
+          Si de nos jours le développement du <strong>nucléaire</strong> à été freiné c’est essentiellement dû aux accidents qui ont marqué 
+          l’histoire comme <strong>Tchernobyl</strong> en 1986 et <strong>Fukushima</strong> en 2011. Rappelant les risques élevés associés à cette technologie 
+          et incitant de nombreux pays à revoir ou ralentir leurs programmes <strong>nucléaire</strong>.
+        </p>
+      </div>
+    </section>
   );
 };
 
