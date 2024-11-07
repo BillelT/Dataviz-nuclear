@@ -127,7 +127,7 @@ const LineChart = () => {
           <Line data={chartData} options={options} />
         </div>
       </div>
-      <div>
+      <div className="container-article">
         <div className="article">
           <h2>Émissions de CO2 (g/kWh) des Différentes Sources Énergétiques au Cours du Temps</h2>
           <p>
@@ -156,14 +156,14 @@ const LineChart = () => {
             et incitant de nombreux pays à revoir ou ralentir leurs programmes nucléaires.
           </p>
         </div>
-        <div>
-          <div>
+        <div className="value">
+          <div className="result">
             <h2>Pétrole</h2>
             <h1><span>{Math.floor(compteurs[0])}g</span></h1>
             <h3>de CO2</h3>
           </div>
-          <div>
-            <h2>Pétrole</h2>
+          <div className="result">
+            <h2>Nucléaire</h2>
             <h1><span>{Math.floor(compteurs[4])}g</span></h1>
             <h3>de CO2</h3>
           </div>
