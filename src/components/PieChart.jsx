@@ -1,14 +1,11 @@
 import React from "react";
 import { Doughnut } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
-import metadata from "../data/electricity-prod-source-stacked.metadata.json";
-import showdown from "showdown";
 
 // Enregistrer les composants nécessaires de Chart.js
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const PieChart = (dataChart) => {
-  console.log(dataChart["data"]);
   const total =
     parseFloat(dataChart["data"]["Other renewables excluding bioenergy"]) +
     parseFloat(dataChart["data"]["bioenergy"]) +
@@ -20,12 +17,10 @@ const PieChart = (dataChart) => {
     parseFloat(dataChart["data"]["coal"]) +
     parseFloat(dataChart["data"]["nuclear"]);
 
-  console.log(total);
-
   const chartData = {
     labels: [
       "Nucléaire",
-      "Énergies renouvelables (Solaire + Éolien + Hydraulique)",
+      "Énergies renouvelables (Solaire + Éolien + Hydro)",
       "Énergies fossiles (Charbon + Gaz + Pétrole)",
       "Autres (Bioénergies + autres renouvelables)",
     ],
@@ -51,18 +46,31 @@ const PieChart = (dataChart) => {
             total) *
             100,
         ],
-        backgroundColor: ["#36A2EB", "#FF6384", "#FFCE56", "#4BC0C0"],
-        hoverBackgroundColor: ["#36A2EB", "#FF6384", "#FFCE56", "#4BC0C0"],
+        backgroundColor: ["yellow", "green", "gray", "purple"],
+        hoverBackgroundColor: ["yellow", "green", "gray", "purple"],
       },
     ],
   };
-  var converter = new showdown.Converter();
-  var html = converter.makeHtml(metadata["chart"]["subtitle"]);
+
   return (
     <div style={{ width: "50%", margin: "0 auto" }}>
       <h2>Production électrique par type d&apos;énergie :</h2>
-      <div dangerouslySetInnerHTML={{ __html: html }}></div>
+      <p>Mesurée en Térawattheure (TWh)</p>
+      <p>Production totale en 2022 : {total.toFixed(2)} TWh</p>
       <Doughnut data={chartData} />
+      <p>
+        Ember (2024) – avec un traitement par{" "}
+        <a href="https://ourworldindata.org/" target="_blank" rel="noreferrer">
+          Our World in Data
+        </a>
+      </p>
+      <a
+        href="https://ourworldindata.org/grapher/electricity-prod-source-stacked"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Source des données
+      </a>
     </div>
   );
 };

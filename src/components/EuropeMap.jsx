@@ -1,4 +1,4 @@
-import "../stylesheets/App.scss";
+import "../stylesheets/DonutChart.scss";
 import { createRoot } from "react-dom/client";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
@@ -8,6 +8,7 @@ import geojsonFeature from "../data/europe.json";
 import euroCountries from "../data/euro-countries.json";
 import emissions from "../data/emissions-per-capita2022.json";
 import mix from "../data/mix-energy-type-countries.json";
+import countriesFr from "../data/countries-fr.json";
 
 export default function EuropeMap() {
   const mapRef = useRef(null);
@@ -15,8 +16,8 @@ export default function EuropeMap() {
     if (value === 0 || value === "undefined" || value === null) {
       return "rgba(0, 0, 0, 0)";
     }
-    if (value === "weight") {
-      return 0;
+    if (value == "0") {
+      return "#fff";
     }
     //value from 0 to 1
     var hue = ((1 - value) * 120).toString(10);
@@ -100,13 +101,19 @@ export default function EuropeMap() {
         },
       })
         .bindPopup(function (layer) {
+          console.log(layer.feature.properties);
+          if (
+            !countriesFiltered.includes(layer.feature.properties.sovereignt)
+          ) {
+            return;
+          }
           // Crée un élément div pour le contenu de la popup
           const popupContent = document.createElement("div");
           popupContent.innerHTML = `
-      <b>Pays :</b> ${layer.feature.properties.sovereignt}<br>
-      <b>Émissions :</b> ${
+      <b>Pays :</b> ${countriesFr[layer.feature.properties["iso_a2"]]}<br>
+      <b>Émissions de CO₂ / habitant en 2022 :</b> ${
         layer.options.dataValue === undefined
-          ? "Données non disponible"
+          ? "Données non disponibles"
           : layer.options.dataValue === 0
           ? "Pays hors UE"
           : `${Number(layer.options.dataValue).toFixed(2)} Tonnes`
@@ -162,6 +169,18 @@ export default function EuropeMap() {
                   ></td>
                 </tr>
               ))}
+              <tr></tr>
+              <tr
+                style={{
+                  marginTop: "30px",
+                }}
+              >
+                <td>Non disponible</td>
+                <td
+                  className="color"
+                  style={{ backgroundColor: "rgba(0, 0, 0, 100)", opacity: 1 }}
+                ></td>
+              </tr>
             </tbody>
           </table>
         </div>
