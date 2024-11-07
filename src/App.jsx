@@ -1,6 +1,7 @@
 import Header from "./components/Header.jsx";
 import Hero from "./components/hero.jsx";
 import EuropeMap from "./components/EuropeMap.jsx";
+import LineChart from "./components/LineChart.jsx";
 import Cost from "./components/Cost.jsx";
 import "./stylesheets/App.scss";
 
@@ -10,6 +11,7 @@ function App() {
       <Header />
       <Hero />
       <EuropeMap />
+      <LineChart />
       <Cost />
     </>
   );
