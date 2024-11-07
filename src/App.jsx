@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       <EuropeMap />
-      <Chart />
+      <LineChart />
     </>
   );
 }

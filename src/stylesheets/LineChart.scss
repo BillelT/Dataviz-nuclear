@@ -1,11 +1,31 @@
+$darkgreen: #135338;
+$white: #f7f7ff;
+
+body{
+    background-color: $darkgreen;
+}
 .container{
     width: auto;
     height: auto;
     margin: 128px 80px;
+    h2{
+        color: $white;
+    }
+    h3{
+        color: $white;
+    }
+    p{
+        color: $white;
+    }
     .graph{
         max-width: 955px;
         max-height: 500px;
         padding-bottom: 32px;
+        div{
+            width: auto;
+            height: auto;
+            background-color: $white;
+        }
     }
     .article{
         max-width: 955px;

@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Line } from "react-chartjs-2";
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from "chart.js";
 import Data from "../data/mix-energie-gkwh.json"; // Assurez-vous que votre JSON est correctement importé
-import "../stylesheets/Chart.scss";
+import "../stylesheets/LineChart.scss";
+import "../stylesheets/App.scss";
 
 // Enregistrer les composants utilisés de Chart.js
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
@@ -91,38 +92,82 @@ const LineChart = () => {
     },
   };
 
+  // État pour les chiffres animés
+  const [compteurs, setCompteurs] = useState([0, 0, 0, 0, 0, 0]);
+
+  const valeursCibles = [850, 590, 510, 250, 4, 250]; // Valeurs cibles pour les différents chiffres
+
+  useEffect(() => {
+    const intervalIds = valeursCibles.map((valeurCible, index) => {
+      const increment = valeurCible / 100; // Incrément pour 1 secondes
+
+      return setInterval(() => {
+        setCompteurs((compteursActuels) => {
+          const nouveauCompteurs = [...compteursActuels];
+          
+          if (nouveauCompteurs[index] + increment >= valeurCible) {
+            nouveauCompteurs[index] = valeurCible;
+            clearInterval(intervalIds[index]);
+          } else {
+            nouveauCompteurs[index] += increment;
+          }
+
+          return nouveauCompteurs;
+        });
+      }, 10);
+    });
+
+    return () => intervalIds.forEach(clearInterval); // Cleanup
+  }, []);
+
   return (
     <section className="container">
       <div className="graph">
-        <Line data={chartData} options={options} />
+        <div>
+          <Line data={chartData} options={options} />
+        </div>
       </div>
-      <div className="article">
-        <h2>Émissions de CO2 (g/kWh) des Différentes Sources Énergétiques au Cours du Temps</h2>
-        <p>
-          Depuis la création de l’électricité, la production d'énergie a évolué au fil des années, 
-          chaque source ayant ses avantages et inconvénients en termes d'émissions de CO2. 
-          Le <strong>charbon</strong> reste l’une des plus polluantes avec environ 850 g de CO2 par kWh, 
-          tandis que le <strong>pétrole</strong> émet 590 g par kWh, contribuant aussi fortement au réchauffement climatique. 
-          Le <strong>gaz naturel</strong>, bien que plus "propre" avec environ 510 g de CO2 par kWh, demeure une source de pollution fossile.
-        </p>
-        <p>
-          Les <strong>énergies renouvelables</strong> comme <strong>l'éolien</strong> (environ 250 g de CO2 par kWh) et le <strong>solaire</strong> 
-          (environ 250g de CO2 par kWh) sont des alternatives à faible empreinte carbone, 
-          bien que leur intermittence pose des défis techniques. Le <strong>nucléaire</strong>, avec seulement 4 g de CO2 par kWh, 
-          produit de l'électricité de manière stable et abondante, 
-          mais soulève des questions de sécurité et de gestion des déchets.
-        </p>
-        <p>
-          Aujourd'hui, face à l'urgence <strong>climatique</strong>, les énergies fossiles sont progressivement remplacées par 
-          des <strong>sources renouvelables</strong> et le <strong>nucléaire</strong>, permettant de réduire les émissions et de 
-          favoriser une transition énergétique vers un avenir plus <strong>durable</strong>.
-        </p>
-        <h3>Le Nucléaire: Un frein historique</h3>
-        <p>
-          Si de nos jours le développement du <strong>nucléaire</strong> à été freiné c’est essentiellement dû aux accidents qui ont marqué 
-          l’histoire comme <strong>Tchernobyl</strong> en 1986 et <strong>Fukushima</strong> en 2011. Rappelant les risques élevés associés à cette technologie 
-          et incitant de nombreux pays à revoir ou ralentir leurs programmes <strong>nucléaire</strong>.
-        </p>
+      <div>
+        <div className="article">
+          <h2>Émissions de CO2 (g/kWh) des Différentes Sources Énergétiques au Cours du Temps</h2>
+          <p>
+            Depuis la création de l’électricité, la production d'énergie a évolué au fil des années, 
+            chaque source ayant ses avantages et inconvénients en termes d'émissions de CO2. 
+            Le charbon reste l’une des plus polluantes avec environ <span>{Math.floor(compteurs[0])}g</span> de CO2 par kWh, 
+            tandis que le pétrole émet <span>{Math.floor(compteurs[1])}g</span> par kWh, contribuant aussi fortement au réchauffement climatique. 
+            Le gaz naturel, bien que plus "propre" avec environ <span>{Math.floor(compteurs[2])}g</span> de CO2 par kWh, 
+            demeure une source de pollution fossile.
+          </p>
+          <p>
+            Les énergies renouvelables comme l'éolien (environ <span>{Math.floor(compteurs[3])}g</span> de CO2 par kWh) et le solaire 
+            (environ <span>{Math.floor(compteurs[5])}g</span> de CO2 par kWh) sont des alternatives à faible empreinte carbone, 
+            bien que leur intermittence pose des défis techniques. Le nucléaire, avec seulement <span>{Math.floor(compteurs[4])}g</span> de CO2 par kWh, produit de l'électricité de manière stable et abondante, 
+            mais soulève des questions de sécurité et de gestion des déchets.
+          </p>
+          <p>
+            Aujourd'hui, face à l'urgence climatique, les énergies fossiles sont progressivement remplacées par 
+            des sources renouvelables et le nucléaire, permettant de réduire les émissions et de 
+            favoriser une transition énergétique vers un avenir plus durable.
+          </p>
+          <h3>Le Nucléaire: Un frein historique</h3>
+          <p>
+            Si de nos jours le développement du nucléaire a été freiné c’est essentiellement dû aux accidents qui ont marqué 
+            l’histoire comme Tchernobyl en 1986 et Fukushima en 2011. Rappelant les risques élevés associés à cette technologie 
+            et incitant de nombreux pays à revoir ou ralentir leurs programmes nucléaires.
+          </p>
+        </div>
+        <div>
+          <div>
+            <h2>Pétrole</h2>
+            <h1><span>{Math.floor(compteurs[0])}g</span></h1>
+            <h3>de CO2</h3>
+          </div>
+          <div>
+            <h2>Pétrole</h2>
+            <h1><span>{Math.floor(compteurs[4])}g</span></h1>
+            <h3>de CO2</h3>
+          </div>
+        </div>
       </div>
     </section>
   );
