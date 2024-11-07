@@ -1,11 +1,11 @@
 import "./stylesheets/App.scss";
 import EuropeMap from "./components/EuropeMap";
-import Chart from "./components/Chart";
+import LineChart from "./components/LineChart";
 function App() {
   return (
     <>
-      <Chart />
-      {/* <EuropeMap /> */}
+      {/* <Chart /> */}
+      <EuropeMap />
     </>
   );
 }

@@ -1,6 +1,8 @@
 import "../stylesheets/App.scss";
+import { createRoot } from "react-dom/client";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
+import PieChart from "./PieChart";
 import { useRef, useEffect } from "react";
 import geojsonFeature from "../data/europe.json";
 import euroCountries from "../data/euro-countries.json";
@@ -80,7 +82,7 @@ export default function EuropeMap() {
         fillOpacity: 0.8,
       };
 
-      console.log(L.geoJSON(geojsonFeature, { style: myStyle }));
+      console.log(mix["Africa"]);
       L.geoJSON(geojsonFeature, {
         // pointToLayer: function (feature, latlng) {
         //   return L.circleMarker(latlng, geojsonMarkerOptions);
@@ -98,16 +100,31 @@ export default function EuropeMap() {
         },
       })
         .bindPopup(function (layer) {
-          return `<b>Pays :</b> ${layer.feature.properties.sovereignt}<br>
-          <b>Émissions :</b> ${
-            layer.options.dataValue === undefined
-              ? "Données non disponible"
-              : layer.options.dataValue === 0
-              ? "Pays hors UE"
-              : `${Number(layer.options.dataValue).toFixed(2)} Tonnes`
-          }<br>
-          <b>Production électrique par type :</b>
-          ${mix[layer.feature.properties.sovereignt]["nuclear"]}% nucléaire`;
+          // Crée un élément div pour le contenu de la popup
+          const popupContent = document.createElement("div");
+          popupContent.innerHTML = `
+      <b>Pays :</b> ${layer.feature.properties.sovereignt}<br>
+      <b>Émissions :</b> ${
+        layer.options.dataValue === undefined
+          ? "Données non disponible"
+          : layer.options.dataValue === 0
+          ? "Pays hors UE"
+          : `${Number(layer.options.dataValue).toFixed(2)} Tonnes`
+      }`;
+          popupContent.className = "popup-chart";
+
+          // Crée un conteneur pour le composant React `PieChart`
+          const chartContainer = document.createElement("div");
+          chartContainer.className = "chart-container";
+          popupContent.appendChild(chartContainer);
+
+          // Utilise `createRoot` pour rendre `PieChart` dans la popup
+          const root = createRoot(chartContainer);
+          root.render(
+            <PieChart data={mix[layer.feature.properties.sovereignt]} />
+          );
+
+          return popupContent;
         })
         .addTo(map);
     }
