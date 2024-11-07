@@ -1,0 +1,545 @@
+{
+    "oil": [
+        {"date": "1964", "value": 700},
+        {
+            "Column1": 1964,
+            "Nuclear": "25g\/Kwh",
+            "Oil": "900g\/Kwh",
+            "gaz": "800g\/Kwh",
+            "Solar": "2000g\/Kwh",
+            "Eolian": "2000g\/Kwh",
+            "Coal": "1000g\/Kwh"
+        },
+        {
+            "Column1": 1965,
+            "Nuclear": "25g\/Kwh",
+            "Oil": "900g\/Kwh",
+            "gaz": "800g\/Kwh",
+            "Solar": "2000g\/Kwh",
+            "Eolian": "2000g\/Kwh",
+            "Coal": "1000g\/Kwh"
+        },
+        {
+            "Column1": 1966,
+            "Nuclear": "24g\/Kwh",
+            "Oil": "890g\/Kwh",
+            "gaz": "795g\/Kwh",
+            "Solar": "2000g\/Kwh",
+            "Eolian": "2000g\/Kwh",
+            "Coal": "1000g\/Kwh"
+        },
+        {
+            "Column1": 1967,
+            "Nuclear": "24g\/Kwh",
+            "Oil": "890g\/Kwh",
+            "gaz": "795g\/Kwh",
+            "Solar": "2000g\/Kwh",
+            "Eolian": "2000g\/Kwh",
+            "Coal": "1000g\/Kwh"
+        },
+        {
+            "Column1": 1968,
+            "Nuclear": "23g\/Kwh",
+            "Oil": "880g\/Kwh",
+            "gaz": "790g\/Kwh",
+            "Solar": "2000g\/Kwh",
+            "Eolian": "2000g\/Kwh",
+            "Coal": "1000g\/Kwh"
+        },
+        {
+            "Column1": 1969,
+            "Nuclear": "23g\/Kwh",
+            "Oil": "880g\/Kwh",
+            "gaz": "790g\/Kwh",
+            "Solar": "2000g\/Kwh",
+            "Eolian": "2000g\/Kwh",
+            "Coal": "1000g\/Kwh"
+        },
+        {
+            "Column1": 1970,
+            "Nuclear": "22g\/Kwh",
+            "Oil": "870g\/Kwh",
+            "gaz": "780g\/Kwh",
+            "Solar": "1900g\/Kwh",
+            "Eolian": "1900g\/Kwh",
+            "Coal": "1000g\/Kwh"
+        },
+        {
+            "Column1": 1971,
+            "Nuclear": "22g\/Kwh",
+            "Oil": "870g\/Kwh",
+            "gaz": "780g\/Kwh",
+            "Solar": "1900g\/Kwh",
+            "Eolian": "1900g\/Kwh",
+            "Coal": "1000g\/Kwh"
+        },
+        {
+            "Column1": 1972,
+            "Nuclear": "21g\/Kwh",
+            "Oil": "860g\/Kwh",
+            "gaz": "770g\/Kwh",
+            "Solar": "1900g\/Kwh",
+            "Eolian": "1900g\/Kwh",
+            "Coal": "1000g\/Kwh"
+        },
+        {
+            "Column1": 1973,
+            "Nuclear": "20g\/Kwh",
+            "Oil": "860g\/Kwh",
+            "gaz": "770g\/Kwh",
+            "Solar": "1900g\/Kwh",
+            "Eolian": "1900g\/Kwh",
+            "Coal": "1000g\/Kwh"
+        },
+        {
+            "Column1": 1974,
+            "Nuclear": "19g\/Kwh",
+            "Oil": "850g\/Kwh",
+            "gaz": "760g\/Kwh",
+            "Solar": "1800g\/Kwh",
+            "Eolian": "1800g\/Kwh",
+            "Coal": "1000g\/Kwh"
+        },
+        {
+            "Column1": 1975,
+            "Nuclear": "18g\/Kwh",
+            "Oil": "850g\/Kwh",
+            "gaz": "760g\/Kwh",
+            "Solar": "1800g\/Kwh",
+            "Eolian": "1800g\/Kwh",
+            "Coal": "1000g\/Kwh"
+        },
+        {
+            "Column1": 1976,
+            "Nuclear": "17g\/Kwh",
+            "Oil": "840g\/Kwh",
+            "gaz": "750g\/Kwh",
+            "Solar": "1800g\/Kwh",
+            "Eolian": "1800g\/Kwh",
+            "Coal": "1000g\/Kwh"
+        },
+        {
+            "Column1": 1977,
+            "Nuclear": "17g\/Kwh",
+            "Oil": "840g\/Kwh",
+            "gaz": "750g\/Kwh",
+            "Solar": "1800g\/Kwh",
+            "Eolian": "1800g\/Kwh",
+            "Coal": "1000g\/Kwh"
+        },
+        {
+            "Column1": 1978,
+            "Nuclear": "16g\/Kwh",
+            "Oil": "830g\/Kwh",
+            "gaz": "740g\/Kwh",
+            "Solar": "1700g\/Kwh",
+            "Eolian": "1700g\/Kwh",
+            "Coal": "1000g\/Kwh"
+        },
+        {
+            "Column1": 1979,
+            "Nuclear": "16g\/Kwh",
+            "Oil": "830g\/Kwh",
+            "gaz": "740g\/Kwh",
+            "Solar": "1700g\/Kwh",
+            "Eolian": "1700g\/Kwh",
+            "Coal": "1000g\/Kwh"
+        },
+        {
+            "Column1": 1980,
+            "Nuclear": "15g\/Kwh",
+            "Oil": "800g\/Kwh",
+            "gaz": "730g\/Kwh",
+            "Solar": "1600g\/Kwh",
+            "Eolian": "1600g\/Kwh",
+            "Coal": "950g\/Kwh"
+        },
+        {
+            "Column1": 1981,
+            "Nuclear": "15g\/Kwh",
+            "Oil": "800g\/Kwh",
+            "gaz": "730g\/Kwh",
+            "Solar": "1600g\/Kwh",
+            "Eolian": "1600g\/Kwh",
+            "Coal": "950g\/Kwh"
+        },
+        {
+            "Column1": 1982,
+            "Nuclear": "15g\/Kwh",
+            "Oil": "790g\/Kwh",
+            "gaz": "720g\/Kwh",
+            "Solar": "1500g\/Kwh",
+            "Eolian": "1500g\/Kwh",
+            "Coal": "950g\/Kwh"
+        },
+        {
+            "Column1": 1983,
+            "Nuclear": "15g\/Kwh",
+            "Oil": "790g\/Kwh",
+            "gaz": "720g\/Kwh",
+            "Solar": "1500g\/Kwh",
+            "Eolian": "1500g\/Kwh",
+            "Coal": "950g\/Kwh"
+        },
+        {
+            "Column1": 1984,
+            "Nuclear": "14g\/Kwh",
+            "Oil": "780g\/Kwh",
+            "gaz": "710g\/Kwh",
+            "Solar": "1400g\/Kwh",
+            "Eolian": "1400g\/Kwh",
+            "Coal": "950g\/Kwh"
+        },
+        {
+            "Column1": 1985,
+            "Nuclear": "14g\/Kwh",
+            "Oil": "780g\/Kwh",
+            "gaz": "710g\/Kwh",
+            "Solar": "1400g\/Kwh",
+            "Eolian": "1400g\/Kwh",
+            "Coal": "950g\/Kwh"
+        },
+        {
+            "Column1": 1986,
+            "Nuclear": "14g\/Kwh",
+            "Oil": "770g\/Kwh",
+            "gaz": "700g\/Kwh",
+            "Solar": "1300g\/Kwh",
+            "Eolian": "1300g\/Kwh",
+            "Coal": "950g\/Kwh"
+        },
+        {
+            "Column1": 1987,
+            "Nuclear": "14g\/Kwh",
+            "Oil": "770g\/Kwh",
+            "gaz": "700g\/Kwh",
+            "Solar": "1300g\/Kwh",
+            "Eolian": "1300g\/Kwh",
+            "Coal": "950g\/Kwh"
+        },
+        {
+            "Column1": 1988,
+            "Nuclear": "13g\/Kwh",
+            "Oil": "760g\/Kwh",
+            "gaz": "690g\/Kwh",
+            "Solar": "1200g\/Kwh",
+            "Eolian": "1200g\/Kwh",
+            "Coal": "950g\/Kwh"
+        },
+        {
+            "Column1": 1989,
+            "Nuclear": "13g\/Kwh",
+            "Oil": "760g\/Kwh",
+            "gaz": "690g\/Kwh",
+            "Solar": "1200g\/Kwh",
+            "Eolian": "1200g\/Kwh",
+            "Coal": "950g\/Kwh"
+        },
+        {
+            "Column1": 1990,
+            "Nuclear": "13g\/Kwh",
+            "Oil": "750g\/Kwh",
+            "gaz": "680g\/Kwh",
+            "Solar": "1100g\/Kwh",
+            "Eolian": "1100g\/Kwh",
+            "Coal": "950g\/Kwh"
+        },
+        {
+            "Column1": 1991,
+            "Nuclear": "13g\/Kwh",
+            "Oil": "750g\/Kwh",
+            "gaz": "680g\/Kwh",
+            "Solar": "1100g\/Kwh",
+            "Eolian": "1100g\/Kwh",
+            "Coal": "950g\/Kwh"
+        },
+        {
+            "Column1": 1992,
+            "Nuclear": "12g\/Kwh",
+            "Oil": "740g\/Kwh",
+            "gaz": "670g\/Kwh",
+            "Solar": "1000g\/Kwh",
+            "Eolian": "1000g\/Kwh",
+            "Coal": "900g\/Kwh"
+        },
+        {
+            "Column1": 1993,
+            "Nuclear": "12g\/Kwh",
+            "Oil": "740g\/Kwh",
+            "gaz": "670g\/Kwh",
+            "Solar": "1000g\/Kwh",
+            "Eolian": "1000g\/Kwh",
+            "Coal": "900g\/Kwh"
+        },
+        {
+            "Column1": 1994,
+            "Nuclear": "12g\/Kwh",
+            "Oil": "730g\/Kwh",
+            "gaz": "660g\/Kwh",
+            "Solar": "950g\/Kwh",
+            "Eolian": "950g\/Kwh",
+            "Coal": "900g\/Kwh"
+        },
+        {
+            "Column1": 1995,
+            "Nuclear": "12g\/Kwh",
+            "Oil": "730g\/Kwh",
+            "gaz": "660g\/Kwh",
+            "Solar": "950g\/Kwh",
+            "Eolian": "950g\/Kwh",
+            "Coal": "900g\/Kwh"
+        },
+        {
+            "Column1": 1996,
+            "Nuclear": "11g\/Kwh",
+            "Oil": "720g\/Kwh",
+            "gaz": "650g\/Kwh",
+            "Solar": "900g\/Kwh",
+            "Eolian": "900g\/Kwh",
+            "Coal": "900g\/Kwh"
+        },
+        {
+            "Column1": 1997,
+            "Nuclear": "11g\/Kwh",
+            "Oil": "720g\/Kwh",
+            "gaz": "650g\/Kwh",
+            "Solar": "900g\/Kwh",
+            "Eolian": "900g\/Kwh",
+            "Coal": "900g\/Kwh"
+        },
+        {
+            "Column1": 1998,
+            "Nuclear": "11g\/Kwh",
+            "Oil": "710g\/Kwh",
+            "gaz": "640g\/Kwh",
+            "Solar": "850g\/Kwh",
+            "Eolian": "850g\/Kwh",
+            "Coal": "900g\/Kwh"
+        },
+        {
+            "Column1": 1999,
+            "Nuclear": "11g\/Kwh",
+            "Oil": "710g\/Kwh",
+            "gaz": "640g\/Kwh",
+            "Solar": "850g\/Kwh",
+            "Eolian": "850g\/Kwh",
+            "Coal": "900g\/Kwh"
+        },
+        {
+            "Column1": 2000,
+            "Nuclear": "10g\/Kwh",
+            "Oil": "700g\/Kwh",
+            "gaz": "620g\/Kwh",
+            "Solar": "800g\/Kwh",
+            "Eolian": "800g\/Kwh",
+            "Coal": "900g\/Kwh"
+        },
+        {
+            "Column1": 2001,
+            "Nuclear": "10g\/Kwh",
+            "Oil": "700g\/Kwh",
+            "gaz": "620g\/Kwh",
+            "Solar": "800g\/Kwh",
+            "Eolian": "800g\/Kwh",
+            "Coal": "900g\/Kwh"
+        },
+        {
+            "Column1": 2002,
+            "Nuclear": "10g\/Kwh",
+            "Oil": "690g\/Kwh",
+            "gaz": "610g\/Kwh",
+            "Solar": "750g\/Kwh",
+            "Eolian": "750g\/Kwh",
+            "Coal": "900g\/Kwh"
+        },
+        {
+            "Column1": 2003,
+            "Nuclear": "10g\/Kwh",
+            "Oil": "690g\/Kwh",
+            "gaz": "610g\/Kwh",
+            "Solar": "750g\/Kwh",
+            "Eolian": "750g\/Kwh",
+            "Coal": "900g\/Kwh"
+        },
+        {
+            "Column1": 2004,
+            "Nuclear": "10g\/Kwh",
+            "Oil": "680g\/Kwh",
+            "gaz": "600g\/Kwh",
+            "Solar": "700g\/Kwh",
+            "Eolian": "700g\/Kwh",
+            "Coal": "900g\/Kwh"
+        },
+        {
+            "Column1": 2005,
+            "Nuclear": "9g\/Kwh",
+            "Oil": "680g\/Kwh",
+            "gaz": "600g\/Kwh",
+            "Solar": "700g\/Kwh",
+            "Eolian": "700g\/Kwh",
+            "Coal": "900g\/Kwh"
+        },
+        {
+            "Column1": 2006,
+            "Nuclear": "9g\/Kwh",
+            "Oil": "670g\/Kwh",
+            "gaz": "590g\/Kwh",
+            "Solar": "650g\/Kwh",
+            "Eolian": "650g\/Kwh",
+            "Coal": "900g\/Kwh"
+        },
+        {
+            "Column1": 2007,
+            "Nuclear": "9g\/Kwh",
+            "Oil": "670g\/Kwh",
+            "gaz": "590g\/Kwh",
+            "Solar": "650g\/Kwh",
+            "Eolian": "650g\/Kwh",
+            "Coal": "900g\/Kwh"
+        },
+        {
+            "Column1": 2008,
+            "Nuclear": "9g\/Kwh",
+            "Oil": "660g\/Kwh",
+            "gaz": "580g\/Kwh",
+            "Solar": "600g\/Kwh",
+            "Eolian": "600g\/Kwh",
+            "Coal": "900g\/Kwh"
+        },
+        {
+            "Column1": 2009,
+            "Nuclear": "9g\/Kwh",
+            "Oil": "660g\/Kwh",
+            "gaz": "580g\/Kwh",
+            "Solar": "600g\/Kwh",
+            "Eolian": "600g\/Kwh",
+            "Coal": "900g\/Kwh"
+        },
+        {
+            "Column1": 2010,
+            "Nuclear": "8g\/Kwh",
+            "Oil": "650g\/Kwh",
+            "gaz": "570g\/Kwh",
+            "Solar": "550g\/Kwh",
+            "Eolian": "550g\/Kwh",
+            "Coal": "850g\/Kwh"
+        },
+        {
+            "Column1": 2011,
+            "Nuclear": "8g\/Kwh",
+            "Oil": "650g\/Kwh",
+            "gaz": "570g\/Kwh",
+            "Solar": "550g\/Kwh",
+            "Eolian": "550g\/Kwh",
+            "Coal": "850g\/Kwh"
+        },
+        {
+            "Column1": 2012,
+            "Nuclear": "8g\/Kwh",
+            "Oil": "640g\/Kwh",
+            "gaz": "560g\/Kwh",
+            "Solar": "500g\/Kwh",
+            "Eolian": "500g\/Kwh",
+            "Coal": "850g\/Kwh"
+        },
+        {
+            "Column1": 2013,
+            "Nuclear": "7g\/Kwh",
+            "Oil": "640g\/Kwh",
+            "gaz": "560g\/Kwh",
+            "Solar": "500g\/Kwh",
+            "Eolian": "500g\/Kwh",
+            "Coal": "850g\/Kwh"
+        },
+        {
+            "Column1": 2014,
+            "Nuclear": "7g\/Kwh",
+            "Oil": "630g\/Kwh",
+            "gaz": "550g\/Kwh",
+            "Solar": "450g\/Kwh",
+            "Eolian": "450g\/Kwh",
+            "Coal": "850g\/Kwh"
+        },
+        {
+            "Column1": 2015,
+            "Nuclear": "7g\/Kwh",
+            "Oil": "630g\/Kwh",
+            "gaz": "550g\/Kwh",
+            "Solar": "450g\/Kwh",
+            "Eolian": "450g\/Kwh",
+            "Coal": "850g\/Kwh"
+        },
+        {
+            "Column1": 2016,
+            "Nuclear": "7g\/Kwh",
+            "Oil": "620g\/Kwh",
+            "gaz": "540g\/Kwh",
+            "Solar": "400g\/Kwh",
+            "Eolian": "400g\/Kwh",
+            "Coal": "850g\/Kwh"
+        },
+        {
+            "Column1": 2017,
+            "Nuclear": "6g\/Kwh",
+            "Oil": "620g\/Kwh",
+            "gaz": "540g\/Kwh",
+            "Solar": "400g\/Kwh",
+            "Eolian": "400g\/Kwh",
+            "Coal": "850g\/Kwh"
+        },
+        {
+            "Column1": 2018,
+            "Nuclear": "6g\/Kwh",
+            "Oil": "610g\/Kwh",
+            "gaz": "530g\/Kwh",
+            "Solar": "350g\/Kwh",
+            "Eolian": "350g\/Kwh",
+            "Coal": "850g\/Kwh"
+        },
+        {
+            "Column1": 2019,
+            "Nuclear": "6g\/Kwh",
+            "Oil": "610g\/Kwh",
+            "gaz": "530g\/Kwh",
+            "Solar": "350g\/Kwh",
+            "Eolian": "350g\/Kwh",
+            "Coal": "850g\/Kwh"
+        },
+        {
+            "Column1": 2020,
+            "Nuclear": "6g\/Kwh",
+            "Oil": "600g\/Kwh",
+            "gaz": "520g\/Kwh",
+            "Solar": "300g\/Kwh",
+            "Eolian": "300g\/Kwh",
+            "Coal": "850g\/Kwh"
+        },
+        {
+            "Column1": 2021,
+            "Nuclear": "5g\/Kwh",
+            "Oil": "600g\/Kwh",
+            "gaz": "520g\/Kwh",
+            "Solar": "300g\/Kwh",
+            "Eolian": "300g\/Kwh",
+            "Coal": "850g\/Kwh"
+        },
+        {
+            "Column1": 2022,
+            "Nuclear": "5g\/Kwh",
+            "Oil": "590g\/Kwh",
+            "gaz": "510g\/Kwh",
+            "Solar": "250g\/Kwh",
+            "Eolian": "250g\/Kwh",
+            "Coal": "850g\/Kwh"
+        },
+        {
+            "Column1": 2023,
+            "Nuclear": "5g\/Kwh",
+            "Oil": "590g\/Kwh",
+            "gaz": "510g\/Kwh",
+            "Solar": "250g\/Kwh",
+            "Eolian": "250g\/Kwh",
+            "Coal": "850g\/Kwh"
+        }
+    ]
+}
