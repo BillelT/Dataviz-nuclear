@@ -1,5 +1,6 @@
 {
-    "Feuille 1": [
+    "oil": [
+        {"date": "1964", "value": 700},
         {
             "Column1": 1964,
             "Nuclear": "25g\/Kwh",
