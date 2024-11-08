@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Line } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -13,6 +13,8 @@ import {
 import Data from "../data/mix-energie-gkwh.json"; // Assurez-vous que votre JSON est correctement importé
 import "../stylesheets/LineChart.scss";
 import "../stylesheets/App.scss";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 // Enregistrer les composants utilisés de Chart.js
 ChartJS.register(
@@ -24,73 +26,54 @@ ChartJS.register(
   Tooltip,
   Legend
 );
+gsap.registerPlugin(ScrollTrigger);
 
 const LineChart = () => {
-  const [showData, setShowData] = useState(true);
+  const [showData] = useState(true);
 
-  // Extraire les années et les valeurs pour chaque source d'énergie
-  const years = Data.Years.map((item) => item.year); // Utilisation des années de l'énergie pétrolière comme labels communs
+  // Références pour chaque chiffre
+  const refCompteurs = useRef([]);
 
-  // Convertir la chaîne "value" en nombre et récupérer les années pour chaque source d'énergie
-  const convertToNumber = (value) =>
-    parseInt(value.replace("g/Kwh", "").trim());
+  const years = Data.Years.map((item) => item.year);
+  const convertToNumber = (value) => parseInt(value.replace("g/Kwh", "").trim());
 
   const chartData = {
-    labels: years, // Années comme labels
+    labels: years,
     datasets: [
       {
-        label: "Pétrole", // Label de la série pour le pétrole
-        data: showData
-          ? Data.Oil.map((item) => convertToNumber(item.value))
-          : [], // Données pour le pétrole
-        borderColor: "rgb(29, 90, 114)", // Couleur de la ligne
-        backgroundColor: "rgba(29, 90, 114, 0.2)", // Couleur de fond sous la ligne
-        tension: 0.2, // Détermine la courbure de la ligne
+        label: "Pétrole",
+        data: showData ? Data.Oil.map((item) => convertToNumber(item.value)) : [],
+        borderColor: "rgb(35, 101, 232)",
+        backgroundColor: "rgba(35, 101, 232, 0.2)",
+        tension: 0.2,
       },
       {
-        label: "Nucléaire", // Label de la série pour le nucléaire
-        data: showData
-          ? Data.Nuclear.map((item) => convertToNumber(item.value))
-          : [], // Données pour le nucléaire
-        borderColor: "rgb(223, 192, 36)", // Couleur de la ligne
-        backgroundColor: "rgba(223, 192, 36, 0.2)", // Couleur de fond sous la ligne
-        tension: 0.2, // Détermine la courbure de la ligne
+        label: "Nucléaire",
+        data: showData ? Data.Nuclear.map((item) => convertToNumber(item.value)) : [],
+        borderColor: "rgb(220, 220, 0)",
+        backgroundColor: "rgba(220, 220, 0, 0.2)",
+        tension: 0.2,
       },
       {
-        label: "Gaz", // Label de la série pour le gaz
-        data: showData
-          ? Data.Gaz.map((item) => convertToNumber(item.value))
-          : [], // Données pour le gaz
-        borderColor: "rgb(144, 115, 87)", // Couleur de la ligne
-        backgroundColor: "rgba(144, 115, 87, 0.2)", // Couleur de fond sous la ligne
-        tension: 0.2, // Détermine la courbure de la ligne
+        label: "Gaz",
+        data: showData ? Data.Gaz.map((item) => convertToNumber(item.value)) : [],
+        borderColor: "rgb(204, 5, 5)",
+        backgroundColor: "rgba(204, 5, 5, 0.2)",
+        tension: 0.2,
       },
       {
-        label: "Solaire", // Label de la série pour le solaire
-        data: showData
-          ? Data.Solar.map((item) => convertToNumber(item.value))
-          : [], // Données pour le solaire
-        borderColor: "rgb(167, 46, 46)", // Couleur de la ligne
-        backgroundColor: "rgba(167, 46, 46, 0.2)", // Couleur de fond sous la ligne
-        tension: 0.2, // Détermine la courbure de la ligne
+        label: "Éolien et Solaire",
+        data: showData ? Data.Eolian.map((item) => convertToNumber(item.value)) : [],
+        borderColor: "rgb(18, 222, 154)",
+        backgroundColor: "rgba(18, 222, 154, 0.2)",
+        tension: 0.2,
       },
       {
-        label: "Éolienne", // Label de la série pour l'éolien
-        data: showData
-          ? Data.Eolian.map((item) => convertToNumber(item.value))
-          : [], // Données pour l'éolien
-        borderColor: "rgb(85, 164, 69)", // Couleur de la ligne
-        backgroundColor: "rgba(85, 164, 69, 0.2)", // Couleur de fond sous la ligne
-        tension: 0.2, // Détermine la courbure de la ligne
-      },
-      {
-        label: "Charbon", // Label de la série pour le charbon
-        data: showData
-          ? Data.Coal.map((item) => convertToNumber(item.value))
-          : [], // Données pour le charbon
-        borderColor: "rgb(54, 54, 54)", // Couleur de la ligne
-        backgroundColor: "rgba(54, 54, 54, 0.2)", // Couleur de fond sous la ligne
-        tension: 0.2, // Détermine la courbure de la ligne
+        label: "Charbon",
+        data: showData ? Data.Coal.map((item) => convertToNumber(item.value)) : [],
+        borderColor: "rgb(108, 115, 128)",
+        backgroundColor: "rgba(108, 115, 128, 0.2)",
+        tension: 0.2,
       },
     ],
   };
@@ -122,66 +105,83 @@ const LineChart = () => {
     },
   };
 
-  // État pour les chiffres animés
-  const [compteurs, setCompteurs] = useState([0, 0, 0, 0, 0, 0]);
-
-  const valeursCibles = [850, 590, 510, 250, 4, 250]; // Valeurs cibles pour les différents chiffres
-
   useEffect(() => {
-    const intervalIds = valeursCibles.map((valeurCible, index) => {
-      const increment = valeurCible / 100; // Incrément pour 1 secondes
-
-      return setInterval(() => {
-        setCompteurs((compteursActuels) => {
-          const nouveauCompteurs = [...compteursActuels];
-
-          if (nouveauCompteurs[index] + increment >= valeurCible) {
-            nouveauCompteurs[index] = valeurCible;
-            clearInterval(intervalIds[index]);
-          } else {
-            nouveauCompteurs[index] += increment;
-          }
-
-          return nouveauCompteurs;
-        });
-      }, 10);
+    const resultDivs = document.querySelectorAll(".result");
+    resultDivs.forEach((resultDiv) => {
+        gsap.fromTo(
+            resultDiv,
+            {
+                x: "+100vw", // Démarre en dehors de l'écran à gauche
+                opacity: 0,
+                position: "relative",
+            },
+            {
+                x: 0, // Se déplace vers la position normale
+                opacity: 1,
+                duration: 1.5, // Durée de l'animation
+                ease: "power2.out", // Type de transition
+                scrollTrigger: {
+                    trigger: resultDiv,
+                    start: "top 80%", // L'animation se déclenche lorsque l'élément entre à 80% dans la fenêtre
+                    toggleActions: "play none none none", // Action quand l'élément devient visible
+                },
+            }
+        );
     });
 
-    return () => intervalIds.forEach(clearInterval); // Cleanup
+    // Animation des valeurs numériques
+    refCompteurs.current.forEach((compteur) => {
+      if (compteur) {
+        gsap.fromTo(
+          compteur,
+          { innerText: 0 }, // Valeur de départ
+          {
+            innerText: parseInt(compteur.getAttribute('data-target')), // Valeur finale
+            duration: 2, // Durée de l'animation
+            ease: "power2.out",
+            onUpdate: function () {
+              compteur.innerText = Math.floor(this.targets()[0].innerText);
+            },
+            scrollTrigger: {
+              trigger: compteur,
+              start: "top 80%",
+              toggleActions: "play none none none",
+            },
+          }
+        );
+      }
+    });
   }, []);
 
   return (
     <section className="container p-top-bot-128 grid">
       <div className="graph grid-col-sm-12-ls-1-9">
+        <h2 className="article-title">
+          Émissions de CO2 (g/kWh) des Différentes Sources Énergétiques au
+          Cours du Temps dans le Monde
+        </h2>
         <div>
           <Line data={chartData} options={options} />
         </div>
       </div>
       <div className="grid row-gap-32 grid-col-12">
-        <div className="grid-col-sm-12-ls-1-9">
-          <h2 className="article-title">
-            Émissions de CO2 (g/kWh) des Différentes Sources Énergétiques au
-            Cours du Temps
-          </h2>
+        <div className="container-articles grid-col-sm-12-ls-1-9">
           <p className="font-size-16 p-bot-16">
             Depuis la création de l'électricité, la production d'énergie a
             évolué au fil des années, chaque source ayant ses avantages et
             inconvénients en termes d'émissions de CO2. Le charbon reste l'une
-            des plus polluantes avec environ{" "}
-            <span>{Math.floor(compteurs[0])}g</span> de CO2 par kWh, tandis que
-            le pétrole émet <span>{Math.floor(compteurs[1])}g</span> par kWh,
+            des plus polluantes avec environ <span className="coal-color" ref={(el) => (refCompteurs.current[5] = el)} data-target="850">0</span>g de CO2 par kWh, tandis que
+            le pétrole émet <span className="oil-color" ref={(el) => (refCompteurs.current[6] = el)} data-target="590">0</span>g par kWh,
             contribuant aussi fortement au réchauffement climatique. Le gaz
-            naturel, bien que plus "propre" avec environ{" "}
-            <span>{Math.floor(compteurs[2])}g</span> de CO2 par kWh, demeure une
+            naturel, bien que plus "propre" avec environ <span className="gaz-color" ref={(el) => (refCompteurs.current[7] = el)} data-target="510">0</span>g de CO2 par kWh, demeure une
             source de pollution fossile.
           </p>
           <p className="font-size-16 p-bot-16">
-            Les énergies renouvelables comme l'éolien (environ{" "}
-            <span>{Math.floor(compteurs[3])}g</span> de CO2 par kWh) et le
-            solaire (environ <span>{Math.floor(compteurs[5])}g</span> de CO2 par
+            Les énergies renouvelables comme l'éolien (environ <span className="eolian-color" ref={(el) => (refCompteurs.current[4] = el)} data-target="250">0</span>g de CO2 par kWh) et le
+            solaire (environ <span className="solar-color" ref={(el) => (refCompteurs.current[3] = el)} data-target="250">0</span>g de CO2 par
             kWh) sont des alternatives à faible empreinte carbone, bien que leur
             intermittence pose des défis techniques. Le nucléaire, avec
-            seulement <span>{Math.floor(compteurs[4])}g</span> de CO2 par kWh,
+            seulement <span className="nuclear-color" ref={(el) => (refCompteurs.current[2] = el)} data-target="4"> 0</span>g de CO2 par kWh,
             produit de l'électricité de manière stable et abondante, mais
             soulève des questions de sécurité et de gestion des déchets.
           </p>
@@ -204,16 +204,16 @@ const LineChart = () => {
         </div>
         <div className="value grid-col-sm-12-ls-11-13">
           <div className="result">
-            <h2>Pétrole</h2>
-            <h1>
-              <span className="lime-text">{Math.floor(compteurs[0])}g</span>
+            <h2>Charbon</h2>
+            <h1 className="coal-color">
+              <span ref={(el) => (refCompteurs.current[0] = el)} data-target="850">0</span>g
             </h1>
             <h3>de CO2</h3>
           </div>
           <div className="result">
             <h2>Nucléaire</h2>
-            <h1>
-              <span className="lime-text">{Math.floor(compteurs[4])}g</span>
+            <h1 className="nuclear-color">
+              <span ref={(el) => (refCompteurs.current[1] = el)} data-target="4">0</span>g
             </h1>
             <h3>de CO2</h3>
           </div>

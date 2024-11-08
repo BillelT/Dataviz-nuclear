@@ -232,3 +232,25 @@ Padding
     grid-column: 1/13;
   }
 }
+
+.nuclear-color{
+  color: $energy-nuclear;
+}
+.coal-color{
+  color: $energy-coal;
+}
+.eolian-color{
+  color: $energy-wind;
+}
+.solar-color{
+  color: $energy-sunny;
+}
+.gaz-color{
+  color: $energy-gaz;
+}
+.oil-color{
+  color: $energy-oil;
+}
+.result{
+  position: relative;
+}
