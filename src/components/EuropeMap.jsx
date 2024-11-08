@@ -1,4 +1,4 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
@@ -13,6 +13,12 @@ import "../fullscreen/Control.FullScreen.css";
 import "../fullscreen/Control.FullScreen";
 
 export default function EuropeMap() {
+  const [legendClosed, setLegendClosed] = useState(false);
+
+  function toggleLegend() {
+    setLegendClosed((prev) => !prev);
+  }
+
   const mapRef = useRef(null);
   function getColor(value) {
     if (value === 0 || value === "undefined" || value === null) {
@@ -46,7 +52,6 @@ export default function EuropeMap() {
         countries.push(feature.properties.sovereignt);
       });
       let countriesFiltered = [];
-      console.log(euroCountries);
       countries.forEach((country) => {
         for (let euroCountry of euroCountries) {
           if (euroCountry["name"] === country) {
@@ -73,7 +78,6 @@ export default function EuropeMap() {
         }
       }
 
-      console.log(mix["Africa"]);
       L.geoJSON(geojsonFeature, {
         style: function (feature) {
           return {
@@ -88,7 +92,6 @@ export default function EuropeMap() {
         },
       })
         .bindPopup(function (layer) {
-          console.log(layer.feature.properties);
           if (
             !countriesFiltered.includes(layer.feature.properties.sovereignt)
           ) {
@@ -128,11 +131,15 @@ export default function EuropeMap() {
     <>
       <section className="container map-container grid m-bot-128 col-gap-20">
         <div className="grid-col-sm-12-ls-1-9">
-          <h2 className="article-title">CO2 et mix énergétique</h2>
+          <h2 className="article-title">
+            De grosses inégalités d&apos;émissions de CO2 en Europe
+          </h2>
           <p className="article-chapeau p-bot-16">
-            Observe t-on un lien entre les émissions de CO2 par habitant en 2022
-            et la part de production du nucléaire des pays de l&apos;Union
-            Européenne ?
+            En comparant les émissions de CO2 par habitant avec le mix
+            énergétique des pays de l&apos;Union Européenne, on observe des
+            disparités importantes. Quels sont les pays les plus émetteurs de
+            CO2 par habitant et la production du nucléaire des pays de
+            l&apos;Union Européenne est-elle corrélée à ses émissions de CO2 ?
           </p>
           <p className="font-size-16 p-bot-64">
             La carte présente les pays de l&apos;Union européenne, colorés en
@@ -147,7 +154,19 @@ export default function EuropeMap() {
         >
           {" "}
           <div id="map" ref={mapRef} style={{ height: "100%", width: "100%" }}>
-            <div id="legend">
+            <div id="legend" className={legendClosed ? "hidden" : ""}>
+              <button onClick={toggleLegend}>
+                <svg
+                  className={legendClosed ? "chevron rotate" : "chevron"}
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  fill="#000000"
+                  viewBox="0 0 256 256"
+                >
+                  <path d="M216.49,104.49l-80,80a12,12,0,0,1-17,0l-80-80a12,12,0,0,1,17-17L128,159l71.51-71.52a12,12,0,0,1,17,17Z"></path>
+                </svg>
+              </button>
               <table>
                 <thead>
                   <tr>
@@ -187,47 +206,69 @@ export default function EuropeMap() {
               </table>
             </div>
           </div>
-          {/* <svg
-          onClick={() => {
-
-          }}
-            xmlns="http://www.w3.org/2000/svg"
-            width="32"
-            height="32"
-            fill="#000000"
-            viewBox="0 0 256 256"
-          >
-            <path d="M216,48V96a8,8,0,0,1-16,0V67.31l-42.34,42.35a8,8,0,0,1-11.32-11.32L188.69,56H160a8,8,0,0,1,0-16h48A8,8,0,0,1,216,48ZM98.34,146.34,56,188.69V160a8,8,0,0,0-16,0v48a8,8,0,0,0,8,8H96a8,8,0,0,0,0-16H67.31l42.35-42.34a8,8,0,0,0-11.32-11.32ZM208,152a8,8,0,0,0-8,8v28.69l-42.34-42.35a8,8,0,0,0-11.32,11.32L188.69,200H160a8,8,0,0,0,0,16h48a8,8,0,0,0,8-8V160A8,8,0,0,0,208,152ZM67.31,56H96a8,8,0,0,0,0-16H48a8,8,0,0,0-8,8V96a8,8,0,0,0,16,0V67.31l42.34,42.35a8,8,0,0,0,11.32-11.32Z"></path>
-          </svg> */}
         </div>
 
         <div className="grid-col-sm-1-12-ls-8-12">
           <h3 className="article-subtitle">
-            Les différences au niveau européen
+            Des différences au niveau européen
           </h3>
           <p className="font-size-16 p-bot-64">
-            Le mix énergétique dans sa production d&apos;électricité d&apos;un pays a un
-            impact direct sur ses émissions de CO₂. La politique énergétique
-            soutenue par la France a été majoritairement l&apos;utilisation du
-            nucléaire, qui lui permet d&apos;être moins dépendant des énergies
-            fossiles - particulièrement émettrices de dioxyde de carbone.
-            C&apos;est le pays qui a le plus de nucléaire dans son mix
-            électrique. D&apos;autres pays ne misent pas sur le nucléaire et
-            combinent à la place souvent les énergies renouvelables avec des
-            énergies fossiles (Italie, Espagne, Allemagne…). Les pays émettant
-            le moins de CO₂ / habitant (Suède, Lettonie, Roumanie) utilisent eux
-            majoritairement des énergies renouvelables mais sont également moins
-            . Le nucléaire et les énergies renouvelables (éolien, solaire)
-            permettent de produire de l&apos;électricité avec peu
-            d&apos;émissions de CO₂.
+            Le mix énergétique dans sa production d&apos;électricité d&apos;un
+            pays a un impact direct sur ses émissions de CO₂. La politique
+            énergétique soutenue par la France a été majoritairement
+            l&apos;utilisation du nucléaire, qui lui permet d&apos;être moins
+            dépendant des énergies fossiles - particulièrement émettrices de
+            dioxyde de carbone. C&apos;est le pays qui a le plus de nucléaire
+            dans son mix énergétique. D&apos;autres pays ne misent pas sur le
+            nucléaire et combinent à la place souvent les énergies renouvelables
+            avec des énergies fossiles (Italie, Espagne, Allemagne…). Les pays
+            émettant le moins de CO₂ / habitant (Suède, Lettonie, Roumanie)
+            utilisent eux majoritairement des énergies renouvelables mais ont
+            aussi une production électrique totale moindre que les grandes
+            puissances de l&apos;UE. Le nucléaire et les énergies renouvelables
+            (éolien, solaire) permettent de produire de l&apos;électricité avec
+            peu d&apos;émissions de CO₂.
           </p>
           <p className="font-size-16 p-bot-64">
             En analysant cette carte, on observe également la dépendance de
             nombreux pays aux énergies fossiles (Pologne, Grèce, Italie…). Ce
             sont des pays moins avancés dans la transition énergétique alors que
-            l&apos;Europe vise “une économie sobre en carbone à l&apos;horizon 2050”. En
-            suivant les exemples de la France ou de la Suède
+            l&apos;Europe vise{" "}
+            <i>“une économie sobre en carbone à l&apos;horizon 2050”</i>. En
+            suivant les exemples de la France ou de la Suède, et avec un soutien
+            adapté, ces pays pourraient réduire leurs émissions de CO₂ et
+            progresser vers une énergie plus propre. Cependant, ce que la carte
+            ne montre pas, c&apos;est la dépendance de l&apos;Union européenne
+            aux importations pour un peu plus de la moitié de sa consommation
+            d&apos;énergie et notamment des énergies fossiles.
           </p>
+        </div>
+        <div className="grid-col-sm-12-ls-1-9">
+          {/* <h3 className="article-subtitle">Quelques données</h3> */}
+          {/* <DonutChartSimple /> */}
+          <div className="flex-container-space-between">
+            <div className="">
+              <h2>Allemagne</h2>
+              <h1>
+                <span className="lime-text">49%</span>
+              </h1>
+              <h3>d&apos;énergies fossiles</h3>
+            </div>
+            <div className="">
+              <h2>France</h2>
+              <h1>
+                <span className="lime-text">62%</span>
+              </h1>
+              <h3>de nucléaire</h3>
+            </div>
+            <div className="">
+              <h2>Suède</h2>
+              <h1>
+                <span className="lime-text">60%</span>
+              </h1>
+              <h3>d&apos;énergies renouvelables</h3>
+            </div>
+          </div>
         </div>
       </section>
     </>

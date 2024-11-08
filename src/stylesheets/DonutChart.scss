@@ -20,7 +20,7 @@ svg path {
 
 #legend {
   background-color: rgba(255, 255, 255, 0.726);
-  padding: 2rem;
+  padding: 0 2rem 2rem 2rem;
   font-size: 1rem;
   position: absolute;
   z-index: 999;
@@ -28,6 +28,26 @@ svg path {
   left: 0;
   transform-origin: bottom left;
   transform: scale(0.8);
+  transition: all 0.3s ease-in-out;
+
+  button {
+    width: 100%;
+    background: transparent;
+    border: none;
+    cursor: default;
+  }
+
+  &.hidden {
+    transform: scale(0.8) translateY(92%);
+  }
+
+  .chevron {
+    transition: all 0.3s ease-in;
+
+    &.rotate {
+      transform: rotate(180deg);
+    }
+  }
 
   @media screen and (max-width: 768px) {
     transform: scale(0.6);
@@ -68,11 +88,29 @@ svg path {
 .popup-chart {
   width: 100%;
   height: 100%;
+  font-size: 0.8em;
+
+  @media screen and (max-width: 760px) {
+    font-size: 0.6em;
+
+    .chart-container {
+      h2 {
+        font-size: 0.7rem;
+      }
+
+      canvas {
+        max-height: 100px;
+      }
+    }
+  }
 
   .chart-container {
-    h2, p {
+
+    h2,
+    p {
       color: #000;
     }
+
     div {
       width: 100% !important;
     }
@@ -83,7 +121,7 @@ svg path {
   }
 
   canvas {
-    max-height: 200px;
+    max-height: 180px;
   }
 }
 
@@ -110,3 +148,9 @@ svg path {
 //     }
 //   }
 // }
+.chart-simple {
+  transform-origin: top left;
+  max-width: 50%;
+  // transform: scale(0.8);
+  margin: 0;
+}

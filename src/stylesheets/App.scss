@@ -240,3 +240,15 @@ Padding
     grid-column: 1/13;
   }
 }
+
+/**
+  Flex
+**/
+
+.flex-container-space-between {
+  gap: 2rem;
+  row-gap: 4rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
