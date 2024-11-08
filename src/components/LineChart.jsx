@@ -34,6 +34,9 @@ const LineChart = () => {
   // Références pour chaque chiffre et pour le graphique
   const refCompteurs = useRef([]);
   const chartRef = useRef(null); // Référence pour la div contenant le graphique
+  const tittleRef = useRef(null);
+  const littleTittleRef = useRef(null);
+
 
   const years = Data.Years.map((item) => item.year);
   const convertToNumber = (value) => parseInt(value.replace("g/Kwh", "").trim());
@@ -167,12 +170,47 @@ const LineChart = () => {
         },
       }
     );
+
+    gsap.fromTo(
+      tittleRef.current,
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.5,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: tittleRef.current,
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+      }
+    );
+
+    gsap.fromTo(
+      littleTittleRef.current,
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.5,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: littleTittleRef.current,
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+      }
+    );
+
   }, []);
+
+  
 
   return (
     <section className="container p-top-bot-128 grid" id="yield">
       <div className="graph grid-col-sm-12-ls-1-9">
-        <h2 className="article-title">
+        <h2 ref={tittleRef} className="article-title">
           Émissions de CO2 (g/kWh) des Différentes Sources Énergétiques au Cours du Temps dans le Monde
         </h2>
         <div ref={chartRef}>
@@ -207,7 +245,7 @@ const LineChart = () => {
             nucléaire, permettant de réduire les émissions et de favoriser une
             transition énergétique vers un avenir plus durable.
           </p>
-          <h3 className="article-subtitle">
+          <h3 ref={littleTittleRef} className="article-subtitle">
             Le Nucléaire: Un frein historique
           </h3>
           <p className="font-size-16">
