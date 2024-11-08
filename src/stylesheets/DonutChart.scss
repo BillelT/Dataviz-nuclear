@@ -6,8 +6,18 @@ svg path {
   }
 }
 
+
 #map {
   height: 500px;
+
+  a {
+    color: inherit;
+
+    &:hover {
+      color: inherit;
+    }
+
+  }
 }
 
 .map-container {
@@ -83,6 +93,17 @@ svg path {
     }
   }
 
+}
+
+.leaflet-control-attribution {
+  a {
+    text-decoration: none !important;
+  }
+    svg path {  
+      &:hover {
+        stroke: none;
+      }
+    }
 }
 
 .popup-chart {

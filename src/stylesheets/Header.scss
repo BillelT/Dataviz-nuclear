@@ -1,9 +1,19 @@
 header {
   padding-top: 20px;
+
   nav {
     ul {
       display: flex;
       column-gap: 32px;
+
+      a {
+        transition: all 0.3s ease;
+        text-decoration: none;
+
+        &:hover {
+          color: #ceff1a;
+        }
+      }
     }
   }
 }
