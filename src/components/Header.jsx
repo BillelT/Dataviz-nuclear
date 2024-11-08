@@ -7,13 +7,19 @@ function Header() {
         <nav>
           <ul>
             <li>
-              <a href="#article1">CO2 et mix énergétique</a>
+              <a href="#carbon" className="font-size-14">
+                CO2 et mix énergétique
+              </a>
             </li>
             <li>
-              <a href="#article1">Rendement des énergies</a>
+              <a href="#yield" className="font-size-14">
+                Rendement des énergies
+              </a>
             </li>
             <li>
-              <a href="#article1">Coût des énergies</a>
+              <a href="#cost" className="font-size-14">
+                Coût des énergies
+              </a>
             </li>
           </ul>
         </nav>

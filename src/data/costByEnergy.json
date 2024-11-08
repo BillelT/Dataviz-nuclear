@@ -1,80 +1,80 @@
 {
   "lightParis": {
     "1": {
-      "cost": 20,
-      "type": "le charbon"
+      "cost": "1800 M",
+      "type": "pétrole"
     },
     "2": {
-      "cost": 20,
+      "cost": "1200 M",
       "type": "charbon"
     },
     "3": {
-      "cost": 20,
-      "type": "charbon"
+      "cost": "840 M",
+      "type": "gaz"
     },
     "4": {
-      "cost": 20,
-      "type": "charbon"
+      "cost": "600 M",
+      "type": "nucléaire"
     },
     "5": {
-      "cost": 20,
-      "type": "charbon"
+      "cost": "480 M",
+      "type": "solaire"
     },
     "6": {
-      "cost": 20,
-      "type": "charbon"
+      "cost": "360 M",
+      "type": "éolien"
     }
   },
   "yearShower": {
     "1": {
-      "cost": 20,
-      "type": "charbon"
+      "cost": "75",
+      "type": "pétrole"
     },
     "2": {
-      "cost": 20,
+      "cost": "50",
       "type": "charbon"
     },
     "3": {
-      "cost": 20,
-      "type": "charbon"
+      "cost": "35",
+      "type": "gaz"
     },
     "4": {
-      "cost": 20,
-      "type": "charbon"
+      "cost": "25",
+      "type": "nucléaire"
     },
     "5": {
-      "cost": 20,
-      "type": "charbon"
+      "cost": "20",
+      "type": "solaire"
     },
     "6": {
-      "cost": 20,
-      "type": "charbon"
+      "cost": "15",
+      "type": "éolien"
     }
   },
   "yearPhone": {
     "1": {
-      "cost": 20,
-      "type": "charbon"
+      "cost": "0.75",
+      "type": "pétrole"
     },
     "2": {
-      "cost": 20,
+      "cost": "0.50",
       "type": "charbon"
     },
     "3": {
-      "cost": 20,
-      "type": "charbon"
+      "cost": "0.35",
+      "type": "gaz"
     },
     "4": {
-      "cost": 20,
-      "type": "charbon"
+      "cost": "0.25",
+      "type": "nucléaire"
     },
     "5": {
-      "cost": 20,
-      "type": "charbon"
+      "cost": "0.20",
+      "type": "solaire"
     },
     "6": {
-      "cost": 20,
-      "type": "charbon"
+      "cost": "0.15",
+      "type": "éolien"
     }
   }
 }
