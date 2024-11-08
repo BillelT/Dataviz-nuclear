@@ -159,11 +159,11 @@ const LineChart = () => {
       </div>
       <div className="grid row-gap-32 grid-col-12">
         <div className="grid-col-sm-12-ls-1-9">
-          <h2>
+          <h2 className="article-title">
             Émissions de CO2 (g/kWh) des Différentes Sources Énergétiques au
             Cours du Temps
           </h2>
-          <p>
+          <p className="font-size-16 p-bot-16">
             Depuis la création de l'électricité, la production d'énergie a
             évolué au fil des années, chaque source ayant ses avantages et
             inconvénients en termes d'émissions de CO2. Le charbon reste l'une
@@ -175,7 +175,7 @@ const LineChart = () => {
             <span>{Math.floor(compteurs[2])}g</span> de CO2 par kWh, demeure une
             source de pollution fossile.
           </p>
-          <p>
+          <p className="font-size-16 p-bot-16">
             Les énergies renouvelables comme l'éolien (environ{" "}
             <span>{Math.floor(compteurs[3])}g</span> de CO2 par kWh) et le
             solaire (environ <span>{Math.floor(compteurs[5])}g</span> de CO2 par
@@ -185,14 +185,16 @@ const LineChart = () => {
             produit de l'électricité de manière stable et abondante, mais
             soulève des questions de sécurité et de gestion des déchets.
           </p>
-          <p>
+          <p className="font-size-16 p-bot-16">
             Aujourd'hui, face à l'urgence climatique, les énergies fossiles sont
             progressivement remplacées par des sources renouvelables et le
             nucléaire, permettant de réduire les émissions et de favoriser une
             transition énergétique vers un avenir plus durable.
           </p>
-          <h3>Le Nucléaire: Un frein historique</h3>
-          <p>
+          <h3 className="article-subtitle">
+            Le Nucléaire: Un frein historique
+          </h3>
+          <p className="font-size-16">
             Si de nos jours le développement du nucléaire a été freiné c'est
             essentiellement dû aux accidents qui ont marqué l'histoire comme
             Tchernobyl en 1986 et Fukushima en 2011. Rappelant les risques
