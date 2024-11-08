@@ -31,8 +31,9 @@ gsap.registerPlugin(ScrollTrigger);
 const LineChart = () => {
   const [showData] = useState(true);
 
-  // Références pour chaque chiffre
+  // Références pour chaque chiffre et pour le graphique
   const refCompteurs = useRef([]);
+  const chartRef = useRef(null); // Référence pour la div contenant le graphique
 
   const years = Data.Years.map((item) => item.year);
   const convertToNumber = (value) => parseInt(value.replace("g/Kwh", "").trim());
@@ -107,26 +108,24 @@ const LineChart = () => {
 
   useEffect(() => {
     const resultDivs = document.querySelectorAll(".result");
+
+    // Animation pour chaque bloc de texte
     resultDivs.forEach((resultDiv) => {
-        gsap.fromTo(
-            resultDiv,
-            {
-                x: "+100vw", // Démarre en dehors de l'écran à gauche
-                opacity: 0,
-                position: "relative",
-            },
-            {
-                x: 0, // Se déplace vers la position normale
-                opacity: 1,
-                duration: 1.5, // Durée de l'animation
-                ease: "power2.out", // Type de transition
-                scrollTrigger: {
-                    trigger: resultDiv,
-                    start: "top 80%", // L'animation se déclenche lorsque l'élément entre à 80% dans la fenêtre
-                    toggleActions: "play none none none", // Action quand l'élément devient visible
-                },
-            }
-        );
+      gsap.fromTo(
+        resultDiv,
+        { x: "+100vw", opacity: 0, position: "relative" },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 1.5,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: resultDiv,
+            start: "top 80%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
     });
 
     // Animation des valeurs numériques
@@ -134,10 +133,10 @@ const LineChart = () => {
       if (compteur) {
         gsap.fromTo(
           compteur,
-          { innerText: 0 }, // Valeur de départ
+          { innerText: 0 },
           {
-            innerText: parseInt(compteur.getAttribute('data-target')), // Valeur finale
-            duration: 2, // Durée de l'animation
+            innerText: parseInt(compteur.getAttribute("data-target")),
+            duration: 2,
             ease: "power2.out",
             onUpdate: function () {
               compteur.innerText = Math.floor(this.targets()[0].innerText);
@@ -151,16 +150,32 @@ const LineChart = () => {
         );
       }
     });
+
+    // Animation pour le graphique
+    gsap.fromTo(
+      chartRef.current,
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.5,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: chartRef.current,
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+      }
+    );
   }, []);
 
   return (
     <section className="container p-top-bot-128 grid" id="yield">
       <div className="graph grid-col-sm-12-ls-1-9">
         <h2 className="article-title">
-          Émissions de CO2 (g/kWh) des Différentes Sources Énergétiques au
-          Cours du Temps dans le Monde
+          Émissions de CO2 (g/kWh) des Différentes Sources Énergétiques au Cours du Temps dans le Monde
         </h2>
-        <div>
+        <div ref={chartRef}>
           <Line data={chartData} options={options} />
         </div>
       </div>
