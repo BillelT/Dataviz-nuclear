@@ -49,14 +49,15 @@ export default function EuropeMap() {
       gsap.fromTo(
         [mapRef.current, subtitleRef.current],
         {
-          y: "50",
+          y: "30",
           opacity: 0,
         },
         {
           y: 0,
           opacity: 1,
-          duration: 1.5,
-          ease: "power2.out",
+          duration: 1,
+          ease: "power3.out",
+          stagger: 0.1,
           scrollTrigger: {
             trigger: mapRef.current,
             start: "top 80%",
