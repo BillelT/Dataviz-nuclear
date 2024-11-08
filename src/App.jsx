@@ -11,7 +11,6 @@ function App() {
     <>
       <Header />
       <Hero />
-      <Number />
       <EuropeMap />
       <LineChart />
       <Cost />
