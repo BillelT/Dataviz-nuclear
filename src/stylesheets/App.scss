@@ -57,6 +57,8 @@ $energy-other: #a106ef;
 
 html {
   scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: $darkgreen $white;
 }
 
 .container {

@@ -9,11 +9,10 @@ import emissions from "../data/emissions-per-capita2022.json";
 import mix from "../data/mix-energy-type-countries.json";
 import countriesFr from "../data/countries-fr.json";
 import "../stylesheets/DonutChart.scss";
-import "../fullscreen/Control.FullScreen.css";
-import "../fullscreen/Control.FullScreen";
 import NumberData from "./NumberData";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import "leaflet.fullscreen";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -136,7 +135,7 @@ export default function EuropeMap() {
           const popupContent = document.createElement("div");
           popupContent.innerHTML = `
       <b>Pays :</b> ${countriesFr[layer.feature.properties["iso_a2"]]}<br>
-      <b>Émissions de CO₂ / habitant en 2022 :</b> ${
+      <b>Émissions de CO2 / habitant en 2022 :</b> ${
         layer.options.dataValue === undefined
           ? "Données non disponibles"
           : layer.options.dataValue === 0
@@ -176,7 +175,10 @@ export default function EuropeMap() {
 
   return (
     <>
-      <section className="container map-container grid m-bot-128 col-gap-20" id="mix">
+      <section
+        className="container map-container grid m-bot-128 col-gap-20"
+        id="mix"
+      >
         <div className="grid-col-sm-12-ls-1-9">
           <div className="h2-container">
             <h2 className="article-title" ref={titleRef}>
@@ -187,8 +189,9 @@ export default function EuropeMap() {
             En comparant les émissions de CO2 par habitant avec le mix
             énergétique des pays de l&apos;Union Européenne, on observe des
             disparités importantes. Quels sont les pays les plus émetteurs de
-            CO2 par habitant et la production du nucléaire des pays de
-            l&apos;Union Européenne est-elle corrélée à ses émissions de CO2 ?
+            CO2 par habitant et l&apos;utilisation du nucléaire dans leurs
+            productions d&apos;énergie des pays de l&apos;Union Européenne
+            est-elle corrélée à leurs émissions de CO2 ?
           </p>
           <p className="font-size-16 p-bot-64">
             La carte présente les pays de l&apos;Union européenne, colorés en
@@ -221,7 +224,7 @@ export default function EuropeMap() {
                   <tr>
                     <th>
                       {" "}
-                      Émissions de CO₂ par habitant en 2022 dans les pays de
+                      Émissions de CO2 par habitant en 2022 dans les pays de
                       l&apos;Union Européenne (en Tonnes)
                     </th>
                   </tr>
@@ -263,7 +266,7 @@ export default function EuropeMap() {
           </h3>
           <p className="font-size-16 p-bot-64">
             Le mix énergétique dans sa production d&apos;électricité d&apos;un
-            pays a un impact direct sur ses émissions de CO₂. La politique
+            pays a un impact direct sur ses émissions de CO2. La politique
             énergétique soutenue par la France a été majoritairement
             l&apos;utilisation du nucléaire, qui lui permet d&apos;être moins
             dépendant des énergies fossiles - particulièrement émettrices de
@@ -271,12 +274,12 @@ export default function EuropeMap() {
             dans son mix énergétique. D&apos;autres pays ne misent pas sur le
             nucléaire et combinent à la place souvent les énergies renouvelables
             avec des énergies fossiles (Italie, Espagne, Allemagne…). Les pays
-            émettant le moins de CO₂ / habitant (Suède, Lettonie, Roumanie)
+            émettant le moins de CO2 / habitant (Suède, Lettonie, Roumanie)
             utilisent eux majoritairement des énergies renouvelables mais ont
             aussi une production électrique totale moindre que les grandes
             puissances de l&apos;UE. Le nucléaire et les énergies renouvelables
             (éolien, solaire) permettent de produire de l&apos;électricité avec
-            peu d&apos;émissions de CO₂.
+            peu d&apos;émissions de CO2.
           </p>
           <p className="font-size-16 p-bot-64">
             En analysant cette carte, on observe également la dépendance de
@@ -285,7 +288,7 @@ export default function EuropeMap() {
             l&apos;Europe vise{" "}
             <i>“une économie sobre en carbone à l&apos;horizon 2050”</i>. En
             suivant les exemples de la France ou de la Suède, et avec un soutien
-            adapté, ces pays pourraient réduire leurs émissions de CO₂ et
+            adapté, ces pays pourraient réduire leurs émissions de CO2 et
             progresser vers une énergie plus propre. Cependant, ce que la carte
             ne montre pas, c&apos;est la dépendance de l&apos;Union européenne
             aux importations pour un peu plus de la moitié de sa consommation
@@ -293,9 +296,10 @@ export default function EuropeMap() {
           </p>
         </div>
         <div className="grid-col-sm-12-ls-1-9">
-          {/* <h3 className="article-subtitle">Quelques données</h3> */}
-          {/* <DonutChartSimple /> */}
-          <div className="flex-container-space-between">
+          <h3 className="article-subtitle">
+            Quelques données sur le mix énergétique
+          </h3>
+          <div className="flex-container-space-between p-bot-16">
             <NumberData
               sub="Allemagne"
               number={49}
@@ -305,7 +309,7 @@ export default function EuropeMap() {
             />
             <NumberData
               sub="France"
-              number={49}
+              number={63}
               under="d'énergie nucléaire"
               unit="%"
               color="lime-color"
@@ -318,6 +322,13 @@ export default function EuropeMap() {
               color="lime-color"
             />
           </div>
+          <p className="">
+            En 2022, par <a href="https://ember-energy.org/">Ember Energy</a>,
+            données utilisées par
+            <a href="https://ourworldindata.org/grapher/electricity-prod-source-stacked">
+              &nbsp;Our World in Data
+            </a>
+          </p>
         </div>
       </section>
     </>

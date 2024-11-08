@@ -12,7 +12,6 @@ function Hero() {
       const text = new SplitType(textToSplit.current, { types: "chars" });
 
       const tl = gsap.timeline();
-      console.log(leRef.current, leRef);
 
       tl.from(text.chars, {
         duration: 0.8,
