@@ -7,7 +7,7 @@ function Header() {
         <nav>
           <ul>
             <li>
-              <a href="#carbon" className="font-size-14">
+              <a href="#mix" className="font-size-14">
                 CO2 et mix énergétique
               </a>
             </li>

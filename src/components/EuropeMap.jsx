@@ -12,27 +12,60 @@ import "../stylesheets/DonutChart.scss";
 import "../fullscreen/Control.FullScreen.css";
 import "../fullscreen/Control.FullScreen";
 import NumberData from "./NumberData";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function EuropeMap() {
   const [legendClosed, setLegendClosed] = useState(false);
+  const titleRef = useRef(null);
+  const mapRef = useRef(null);
+  const subtitleRef = useRef(null);
 
   function toggleLegend() {
     setLegendClosed((prev) => !prev);
   }
 
-  const mapRef = useRef(null);
-  function getColor(value) {
-    if (value === 0 || value === "undefined" || value === null) {
-      return "rgba(0, 0, 0, 0)";
-    }
-    if (value == "0") {
-      return "#fff";
-    }
-    //value from 0 to 1
-    var hue = ((1 - value) * 120).toString(10);
-    return ["hsl(", hue, ",100%,50%)"].join("");
-  }
   useEffect(() => {
+    if (titleRef.current) {
+      gsap.fromTo(
+        titleRef.current,
+        { y: 40, opacity: 0.6 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          scrollTrigger: {
+            trigger: titleRef.current,
+            start: "top 80%",
+            toggleActions: "play none none none",
+          },
+          ease: "power2.out",
+        }
+      );
+    }
+    if (mapRef.current && subtitleRef.current) {
+      gsap.fromTo(
+        [mapRef.current, subtitleRef.current],
+        {
+          y: "50",
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1.5,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: mapRef.current,
+            start: "top 80%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    }
+
     if (mapRef.current && !mapRef.current._leaflet_id) {
       const map = L.map(mapRef.current, {
         fullscreenControl: true,
@@ -128,13 +161,27 @@ export default function EuropeMap() {
     }
   }, []);
 
+  function getColor(value) {
+    if (value === 0 || value === "undefined" || value === null) {
+      return "rgba(0, 0, 0, 0)";
+    }
+    if (value == "0") {
+      return "#fff";
+    }
+    //value from 0 to 1
+    var hue = ((1 - value) * 120).toString(10);
+    return ["hsl(", hue, ",100%,50%)"].join("");
+  }
+
   return (
     <>
-      <section className="container map-container grid m-bot-128 col-gap-20">
+      <section className="container map-container grid m-bot-128 col-gap-20" id="mix">
         <div className="grid-col-sm-12-ls-1-9">
-          <h2 className="article-title">
-            De grosses inégalités d&apos;émissions de CO2 en Europe
-          </h2>
+          <div className="h2-container">
+            <h2 className="article-title" ref={titleRef}>
+              De grosses inégalités d&apos;émissions de CO2 en Europe
+            </h2>
+          </div>
           <p className="article-chapeau p-bot-16">
             En comparant les émissions de CO2 par habitant avec le mix
             énergétique des pays de l&apos;Union Européenne, on observe des
@@ -210,7 +257,7 @@ export default function EuropeMap() {
         </div>
 
         <div className="grid-col-sm-1-12-ls-8-12">
-          <h3 className="article-subtitle">
+          <h3 className="article-subtitle" ref={subtitleRef}>
             Des différences au niveau européen
           </h3>
           <p className="font-size-16 p-bot-64">

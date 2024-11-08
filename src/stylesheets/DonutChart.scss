@@ -154,3 +154,7 @@ svg path {
   // transform: scale(0.8);
   margin: 0;
 }
+
+.h2-container {
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 90%)
+}
