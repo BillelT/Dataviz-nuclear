@@ -28,6 +28,7 @@ export default function EuropeMap() {
 
   useEffect(() => {
     if (titleRef.current) {
+      // gsap animation
       gsap.fromTo(
         titleRef.current,
         { y: 40, opacity: 0.6 },
