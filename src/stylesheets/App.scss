@@ -35,9 +35,9 @@ $darkgreen: #135338;
 $lime: #ceff1a;
 
 // Energy Variable
-$energy-oil: #2365E8;
-$energy-coal: #6C7380;
-$energy-gaz: #CC0505;
+$energy-oil: #2365e8;
+$energy-coal: #6c7380;
+$energy-gaz: #cc0505;
 $energy-nuclear: #dcdc00;
 $energy-sunny: #e09706;
 $energy-wind: #12de9a;
@@ -56,16 +56,12 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  margin: 0;
-}
-
 .container {
   margin-left: 80px;
   margin-right: 80px;
 }
 
-.relative{
+.relative {
   position: relative;
 }
 
@@ -95,7 +91,6 @@ a {
   color: $darkgreen;
 }
 
-
 /**
 Fonts
 **/
@@ -113,31 +108,31 @@ Fonts
 }
 
 h1 {
-  font-size: calc(42px + (100 - 43) * ((100vw - 320px) / (1440 - 320)));;
+  font-size: calc(42px + (100 - 43) * ((100vw - 320px) / (1440 - 320)));
 }
 
-.font-size-14{
+.font-size-14 {
   font-size: 14px;
 }
 
-.font-size-16{
+.font-size-16 {
   font-size: 16px;
   line-height: 22.4px;
 }
 
-.article-title{
+.article-title {
   font-size: 34px;
   font-weight: 600;
   padding-bottom: 16px;
 }
 
-.article-chapeau{
+.article-chapeau {
   font-size: 20px;
   font-weight: 400;
   line-height: 28px;
 }
 
-.article-subtitle{
+.article-subtitle {
   font-size: 28px;
   font-weight: 500;
   padding-bottom: 16px;
@@ -169,7 +164,7 @@ Row Gaps
 Margin
 **/
 
-.m-bot-128{
+.m-bot-128 {
   margin-bottom: 128px;
 }
 
@@ -177,11 +172,11 @@ Margin
 Padding
 **/
 
-.p-bot-16{
+.p-bot-16 {
   padding-bottom: 16px;
 }
 
-.p-bot-64{
+.p-bot-64 {
   padding-bottom: 64px;
 }
 
@@ -207,35 +202,33 @@ Padding
   grid-column: 1/10;
 }
 
-.grid-col-sm-12-ls-4-9{
+.grid-col-sm-12-ls-4-9 {
   grid-column: 4/10;
 }
 
-.grid-col-sm-12-ls-11-13{
-grid-column: 11/13;
+.grid-col-sm-12-ls-11-13 {
+  grid-column: 11/13;
 }
 
-
-.grid-col-sm-1-12-ls-1-7{
+.grid-col-sm-1-12-ls-1-7 {
   grid-column: 1/8;
 }
 
-.grid-col-sm-1-12-ls-8-12{
+.grid-col-sm-1-12-ls-8-12 {
   grid-column: 8/13;
 }
 
-.grid-col-12{
+.grid-col-12 {
   grid-column: 1/13;
 }
 
 @media screen and (max-width: 760px) {
   .grid-col-sm-12-ls-1-4,
   .grid-col-sm-12-ls-1-9,
-  .grid-col-sm-12-ls-4-9 ,
+  .grid-col-sm-12-ls-4-9,
   .grid-col-sm-12-ls-11-13,
   .grid-col-sm-1-7-ls-1-12,
-  .grid-col-sm-1-12-ls-8-12{
+  .grid-col-sm-1-12-ls-8-12 {
     grid-column: 1/13;
   }
 }
-
