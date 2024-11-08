@@ -177,7 +177,8 @@ const LineChart = () => {
             source de pollution fossile.
           </p>
           <p className="font-size-16 p-bot-16">
-          Les énergies renouvelables, comme l'éolien et le solaire, ont considérablement réduit leurs émissions 
+          Les énergies renouvelables, comme l'éolien et le solaire, ont considérablement réduit leurs émissions par rapport aux années 60,  
+          passant d'environ <span className="eolian-color" ref={(el) => (refCompteurs.current[8] = el)} data-target="2000">0</span>g de CO2 par kWh
           à environ <span className="eolian-color" ref={(el) => (refCompteurs.current[4] = el)} data-target="250">0</span>g de CO2 par kWh, grâce aux avancées technologiques et industrielles. Elles offrent une 
           alternative à faible empreinte carbone, bien qu'elles rencontrent des défis d'intermittence. Le nucléaire, 
           avec seulement <span className="nuclear-color" ref={(el) => (refCompteurs.current[2] = el)} data-target="4"> 0</span>g de CO₂ par kWh, est une source d'énergie stable et abondante, malgré les préoccupations 
