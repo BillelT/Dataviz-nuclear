@@ -126,7 +126,10 @@ export default function EuropeMap() {
 
   return (
     <>
-      <section className="container map-container grid m-bot-128 col-gap-20">
+      <section
+        className="container map-container grid m-bot-128 col-gap-20"
+        id="carbon"
+      >
         <div className="grid-col-sm-12-ls-1-9">
           <h2 className="article-title">CO2 et mix énergétique</h2>
           <p className="article-chapeau p-bot-16">
@@ -206,27 +209,27 @@ export default function EuropeMap() {
             Les différences au niveau européen
           </h3>
           <p className="font-size-16 p-bot-64">
-            Le mix énergétique dans sa production d&apos;électricité d&apos;un pays a un
-            impact direct sur ses émissions de CO₂. La politique énergétique
-            soutenue par la France a été majoritairement l&apos;utilisation du
-            nucléaire, qui lui permet d&apos;être moins dépendant des énergies
-            fossiles - particulièrement émettrices de dioxyde de carbone.
-            C&apos;est le pays qui a le plus de nucléaire dans son mix
-            électrique. D&apos;autres pays ne misent pas sur le nucléaire et
-            combinent à la place souvent les énergies renouvelables avec des
-            énergies fossiles (Italie, Espagne, Allemagne…). Les pays émettant
-            le moins de CO₂ / habitant (Suède, Lettonie, Roumanie) utilisent eux
-            majoritairement des énergies renouvelables mais sont également moins
-            . Le nucléaire et les énergies renouvelables (éolien, solaire)
-            permettent de produire de l&apos;électricité avec peu
-            d&apos;émissions de CO₂.
+            Le mix énergétique dans sa production d&apos;électricité d&apos;un
+            pays a un impact direct sur ses émissions de CO₂. La politique
+            énergétique soutenue par la France a été majoritairement
+            l&apos;utilisation du nucléaire, qui lui permet d&apos;être moins
+            dépendant des énergies fossiles - particulièrement émettrices de
+            dioxyde de carbone. C&apos;est le pays qui a le plus de nucléaire
+            dans son mix électrique. D&apos;autres pays ne misent pas sur le
+            nucléaire et combinent à la place souvent les énergies renouvelables
+            avec des énergies fossiles (Italie, Espagne, Allemagne…). Les pays
+            émettant le moins de CO₂ / habitant (Suède, Lettonie, Roumanie)
+            utilisent eux majoritairement des énergies renouvelables mais sont
+            également moins . Le nucléaire et les énergies renouvelables
+            (éolien, solaire) permettent de produire de l&apos;électricité avec
+            peu d&apos;émissions de CO₂.
           </p>
           <p className="font-size-16 p-bot-64">
             En analysant cette carte, on observe également la dépendance de
             nombreux pays aux énergies fossiles (Pologne, Grèce, Italie…). Ce
             sont des pays moins avancés dans la transition énergétique alors que
-            l&apos;Europe vise “une économie sobre en carbone à l&apos;horizon 2050”. En
-            suivant les exemples de la France ou de la Suède
+            l&apos;Europe vise “une économie sobre en carbone à l&apos;horizon
+            2050”. En suivant les exemples de la France ou de la Suède
           </p>
         </div>
       </section>

@@ -21,13 +21,13 @@ function Cost() {
         id="cost"
       >
         <div className="grid-col-sm-12-ls-1-9">
-          <h2 className="article-title">Title</h2>
+          <h2 className="article-title">
+            Le coût des énergies, un frein à la décarbonation ?
+          </h2>
           <p className="article-chapeau">
-            Chapeau Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Architecto incidunt vero quam expedita illo excepturi labore quaerat
-            doloribus temporibus nesciunt sequi vel ab, eveniet doloremque
-            magni, quidem explicabo sint nulla itaque voluptate omnis, obcaecati
-            animi blanditiis. Accusantium nesciunt libero minus.
+            Bien que ce sujet soit largement abordé ces dernières années, une
+            certaine désinformation persiste dans l'esprit collectif concernant
+            les coûts de production d'énergie selon les sources utilisées.
           </p>
         </div>
         <article className="grid-col-12 grid col-gap-20">
@@ -43,18 +43,24 @@ function Cost() {
         </article>
         <div className="grid-col-sm-12-ls-1-9">
           <p className="font-size-16">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum
-            rerum numquam assumenda deleniti fuga libero exercitationem nobis
-            provident aliquid quam ratione, tempora laborum vitae sunt, ullam
-            nam, distinctio consequatur minima error molestias deserunt
-            obcaecati architecto laudantium cumque! Non animi error pariatur,
-            facilis ratione sapiente explicabo magni dolores saepe fugiat esse.
+            En mars 2024, 89 % des citoyens français interrogés ont déclaré que
+            les énergies renouvelables (EnR) étaient trop onéreuses, et 60 %
+            estiment qu'elles restent difficiles à installer. Cette perception
+            erronée laisse penser que le coût de construction des
+            infrastructures d'énergie verte freine les avancées écologiques,
+            alors que la réalité est toute autre. Ces infrastructures ne sont en
+            réalité pas plus coûteuses que la construction de centrales
+            nucléaires. De plus, les énergies fossiles sont de plus en plus
+            difficiles à exploiter et comportent des risques élevés. Quant au
+            nucléaire, bien qu'il jouisse d'une meilleure perception que les
+            énergies fossiles, sa compétitivité est à relativiser, comme le
+            montrent les dernières données disponibles.
           </p>
         </div>
         <article className="grid-col-12 grid col-gap-20">
           <div className="test grid-col-sm-12-ls-1-4"></div>
           <p className="grid-col-sm-12-ls-4-9 data-text">
-            Le cout de pour éclairer Paris pendant 1 année est de{" "}
+            Le cout de pour 1 année de douche quotidienne est de{" "}
             <span className={`data-value ${getEnergyClass(selectedEnergy)}`}>
               {costByEnergy.yearShower[selectedEnergy].cost}€
             </span>{" "}
@@ -63,20 +69,24 @@ function Cost() {
           </p>
         </article>
         <div className="grid-col-sm-12-ls-1-9">
-          <h3 className="article-subtitle">Subtitle</h3>
+          <h3 className="article-subtitle">Une avancée collective</h3>
           <p className="font-size-16">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum
-            rerum numquam assumenda deleniti fuga libero exercitationem nobis
-            provident aliquid quam ratione, tempora laborum vitae sunt, ullam
-            nam, distinctio consequatur minima error molestias deserunt
-            obcaecati architecto laudantium cumque! Non animi error pariatur,
-            facilis ratione sapiente explicabo magni dolores saepe fugiat esse.
+            Heureusement, la prise de conscience générale évolue, et des
+            distinctions se dessinent. L'énergie solaire et l'éolien émergent
+            comme des solutions compétitives et commencent à briser le mythe des
+            EnR coûteuses. En revanche, les actions et efforts individuels
+            contre la surconsommation sont encore souvent sous-estimés. Par
+            exemple, le coût annuel de recharge d'un smartphone est de quelques
+            centimes seulement. À l'échelle d'une ville comme Paris, en
+            revanche, le passage aux énergies vertes pourrait permettre de
+            réaliser des économies substantielles, en réduisant à la fois les
+            coûts énergétiques et l'empreinte carbone de façon significative.
           </p>
         </div>
         <article className="grid-col-12 grid col-gap-20">
           <div className="test grid-col-sm-12-ls-1-4"></div>
           <p className="grid-col-sm-12-ls-4-9 data-text">
-            Le cout de pour éclairer Paris pendant 1 année est de{" "}
+            Le cout de pour recharger son smartphone pendant 1 année est de{" "}
             <span className={`data-value ${getEnergyClass(selectedEnergy)}`}>
               {costByEnergy.yearPhone[selectedEnergy].cost}€
             </span>{" "}
