@@ -167,7 +167,7 @@ const LineChart = () => {
       <div className="grid row-gap-32 grid-col-12">
         <div className="container-articles grid-col-sm-12-ls-1-9">
           <p className="font-size-16 p-bot-16">
-            Depuis la création de l'électricité, la production d'énergie a
+            Depuis les années 60, la production d'énergie a
             évolué au fil des années, chaque source ayant ses avantages et
             inconvénients en termes d'émissions de CO2. Le charbon reste l'une
             des plus polluantes avec environ <span className="coal-color" ref={(el) => (refCompteurs.current[5] = el)} data-target="850">0</span>g de CO2 par kWh, tandis que
@@ -177,14 +177,14 @@ const LineChart = () => {
             source de pollution fossile.
           </p>
           <p className="font-size-16 p-bot-16">
-            Les énergies renouvelables comme l'éolien (environ <span className="eolian-color" ref={(el) => (refCompteurs.current[4] = el)} data-target="250">0</span>g de CO2 par kWh) et le
-            solaire (environ <span className="solar-color" ref={(el) => (refCompteurs.current[3] = el)} data-target="250">0</span>g de CO2 par
-            kWh) sont des alternatives à faible empreinte carbone, bien que leur
-            intermittence pose des défis techniques. Le nucléaire, avec
-            seulement <span className="nuclear-color" ref={(el) => (refCompteurs.current[2] = el)} data-target="4"> 0</span>g de CO2 par kWh,
-            produit de l'électricité de manière stable et abondante, mais
-            soulève des questions de sécurité et de gestion des déchets.
+          Les énergies renouvelables, comme l'éolien et le solaire, ont considérablement réduit leurs émissions 
+          à environ <span className="eolian-color" ref={(el) => (refCompteurs.current[4] = el)} data-target="250">0</span>g de CO2 par kWh, grâce aux avancées technologiques et industrielles. Elles offrent une 
+          alternative à faible empreinte carbone, bien qu'elles rencontrent des défis d'intermittence. Le nucléaire, 
+          avec seulement <span className="nuclear-color" ref={(el) => (refCompteurs.current[2] = el)} data-target="4"> 0</span>g de CO₂ par kWh, est une source d'énergie stable et abondante, malgré les préoccupations 
+          liées à la sécurité et aux déchets. Ces progrès soulignent l'évolution vers des solutions énergétiques plus propres, 
+          malgré certains obstacles techniques.
           </p>
+          
           <p className="font-size-16 p-bot-16">
             Aujourd'hui, face à l'urgence climatique, les énergies fossiles sont
             progressivement remplacées par des sources renouvelables et le
@@ -208,14 +208,14 @@ const LineChart = () => {
             <h1 className="coal-color">
               <span ref={(el) => (refCompteurs.current[0] = el)} data-target="850">0</span>g
             </h1>
-            <h3>de CO2</h3>
+            <h3>de CO2 par kwh</h3>
           </div>
           <div className="result">
             <h2>Nucléaire</h2>
             <h1 className="nuclear-color">
               <span ref={(el) => (refCompteurs.current[1] = el)} data-target="4">0</span>g
             </h1>
-            <h3>de CO2</h3>
+            <h3>de CO2 par kwh</h3>
           </div>
         </div>
       </div>
