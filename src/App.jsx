@@ -1,5 +1,5 @@
 import Header from "./components/Header.jsx";
-import Hero from "./components/hero.jsx";
+import Hero from "./components/Hero.jsx";
 import EuropeMap from "./components/EuropeMap.jsx";
 import LineChart from "./components/LineChart.jsx";
 import Cost from "./components/Cost.jsx";
