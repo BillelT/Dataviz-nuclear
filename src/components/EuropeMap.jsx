@@ -11,6 +11,7 @@ import countriesFr from "../data/countries-fr.json";
 import "../stylesheets/DonutChart.scss";
 import "../fullscreen/Control.FullScreen.css";
 import "../fullscreen/Control.FullScreen";
+import NumberData from "./NumberData";
 
 export default function EuropeMap() {
   const [legendClosed, setLegendClosed] = useState(false);
@@ -129,10 +130,7 @@ export default function EuropeMap() {
 
   return (
     <>
-      <section
-        className="container map-container grid m-bot-128 col-gap-20"
-        id="carbon"
-      >
+      <section className="container map-container grid m-bot-128 col-gap-20">
         <div className="grid-col-sm-12-ls-1-9">
           <h2 className="article-title">
             De grosses inégalités d&apos;émissions de CO2 en Europe
@@ -250,27 +248,27 @@ export default function EuropeMap() {
           {/* <h3 className="article-subtitle">Quelques données</h3> */}
           {/* <DonutChartSimple /> */}
           <div className="flex-container-space-between">
-            <div className="">
-              <h2>Allemagne</h2>
-              <h1>
-                <span className="lime-text">49%</span>
-              </h1>
-              <h3>d&apos;énergies fossiles</h3>
-            </div>
-            <div className="">
-              <h2>France</h2>
-              <h1>
-                <span className="lime-text">62%</span>
-              </h1>
-              <h3>de nucléaire</h3>
-            </div>
-            <div className="">
-              <h2>Suède</h2>
-              <h1>
-                <span className="lime-text">60%</span>
-              </h1>
-              <h3>d&apos;énergies renouvelables</h3>
-            </div>
+            <NumberData
+              sub="Allemagne"
+              number={49}
+              under="d'énergies fossiles"
+              unit="%"
+              color="lime-color"
+            />
+            <NumberData
+              sub="France"
+              number={49}
+              under="d'énergie nucléaire"
+              unit="%"
+              color="lime-color"
+            />
+            <NumberData
+              sub="Suède"
+              number={60}
+              under="d'énergies renouvelables"
+              unit="%"
+              color="lime-color"
+            />
           </div>
         </div>
       </section>

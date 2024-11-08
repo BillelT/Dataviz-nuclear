@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react"; 
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "../stylesheets/App.scss";
@@ -6,7 +6,13 @@ import "../stylesheets/App.scss";
 // Enregistrer le plugin ScrollTrigger de GSAP
 gsap.registerPlugin(ScrollTrigger);
 
-const Number = () => {
+const NumberData = ({
+  sub = "Charbon",
+  number = 850,
+  under = "de CO2",
+  unit = "g",
+  color = "coal-color",
+}) => {
   const refCompteurs = useRef([]); // Référence pour chaque compteur
 
   useEffect(() => {
@@ -33,7 +39,9 @@ const Number = () => {
       );
 
       // Animation des chiffres partant de zéro
-      const targetValue = numberDiv.querySelector("span")?.getAttribute("data-target");
+      const targetValue = numberDiv
+        .querySelector("span")
+        ?.getAttribute("data-target");
       if (targetValue) {
         gsap.fromTo(
           numberDiv.querySelector("span"),
@@ -59,14 +67,20 @@ const Number = () => {
   return (
     <div className="value grid-col-sm-12-ls-11-13">
       <div className="number">
-        <h2>Charbon</h2>
-        <h1 className="coal-color">
-          <span ref={(el) => (refCompteurs.current[0] = el)} data-target="850">0</span>g
+        <h2>{sub}</h2>
+        <h1 className={color}>
+          <span
+            ref={(el) => (refCompteurs.current[0] = el)}
+            data-target={number}
+          >
+            {number}
+          </span>
+          {unit}
         </h1>
-        <h3>de CO2</h3>
+        <h3>{under}</h3>
       </div>
     </div>
   );
-}
+};
 
-export default Number;
+export default NumberData;
