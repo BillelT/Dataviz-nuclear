@@ -5,11 +5,13 @@
   font-weight: 900;
   src: url(/fonts/Archivo/Archivo-Black.ttf);
 }
+
 @font-face {
   font-family: Archivo;
   font-weight: 700;
   src: url(/fonts/Archivo/Archivo-Bold.ttf);
 }
+
 @font-face {
   font-family: Archivo;
   font-weight: 600;
@@ -22,6 +24,7 @@
   font-weight: 700;
   src: url(/fonts/Nimbus/NimbusSanL-Bol.otf);
 }
+
 @font-face {
   font-family: Nimbus;
   font-weight: 400;
@@ -101,6 +104,11 @@ Fonts
 
 .font-weight-900 {
   font-weight: 900;
+}
+
+.white-bg {
+  background-color: $white;
+  color: $black;
 }
 
 .lime-text {

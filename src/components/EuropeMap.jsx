@@ -34,14 +34,6 @@ export default function EuropeMap() {
         maxZoom: 8,
       }).addTo(map);
 
-      var myStyle = {
-        color: "#ff7800",
-        stroke: true,
-        weight: 0,
-        opacity: 1,
-        fillOpacity: 0.5,
-      };
-
       let countries = [];
       geojsonFeature["features"].forEach((feature) => {
         countries.push(feature.properties.sovereignt);
@@ -74,20 +66,8 @@ export default function EuropeMap() {
         }
       }
 
-      var geojsonMarkerOptions = {
-        radius: 8,
-        fillColor: "#ff7800",
-        color: "#000",
-        weight: 1,
-        opacity: 1,
-        fillOpacity: 0.8,
-      };
-
       console.log(mix["Africa"]);
       L.geoJSON(geojsonFeature, {
-        // pointToLayer: function (feature, latlng) {
-        //   return L.circleMarker(latlng, geojsonMarkerOptions);
-        // },
         style: function (feature) {
           return {
             fillColor: getColor(
