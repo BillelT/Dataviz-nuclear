@@ -15,10 +15,12 @@ function Cost() {
       ".changing-data",
       {
         opacity: 0,
+        y: 20,
       },
       {
         opacity: 1,
         duration: 0.4,
+        y: 0,
         ease: "power1.Out",
       }
     );
