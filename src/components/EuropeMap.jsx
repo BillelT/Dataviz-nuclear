@@ -129,7 +129,10 @@ export default function EuropeMap() {
 
   return (
     <>
-      <section className="container map-container grid m-bot-128 col-gap-20">
+      <section
+        className="container map-container grid m-bot-128 col-gap-20"
+        id="carbon"
+      >
         <div className="grid-col-sm-12-ls-1-9">
           <h2 className="article-title">
             De grosses inégalités d&apos;émissions de CO2 en Europe

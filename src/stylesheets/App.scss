@@ -70,8 +70,8 @@ html {
 
 @media screen and (max-width: 760px) {
   .container {
-    padding-left: 20px;
-    padding-right: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
   }
 }
 
@@ -239,6 +239,26 @@ Padding
   .grid-col-sm-1-12-ls-8-12 {
     grid-column: 1/13;
   }
+}
+
+
+.nuclear-color{
+  color: $energy-nuclear;
+}
+.coal-color{
+  color: $energy-coal;
+}
+.solar-color{
+  color: $energy-sunny;
+}
+.eolian-color{
+  color: $energy-wind;
+}
+.gaz-color{
+  color: $energy-gaz;
+}
+.oil-color{
+  color: $energy-oil;
 }
 
 /**
