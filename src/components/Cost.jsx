@@ -17,7 +17,7 @@ function Cost() {
   return (
     <>
       <section
-        className="darkgreen-bg container p-top-bot-128 grid row-gap-128 relative"
+        className="container p-top-bot-128 grid row-gap-128 relative cost"
         id="cost"
       >
         <div className="grid-col-sm-12-ls-1-9">
@@ -49,6 +49,9 @@ function Cost() {
         </article>
         {/* Liste de choix des énergies avec état interactif */}
         <div className="choice darkgreen-bg">
+          <p className="select  ">
+            Sélectionner une énergie pour voir son coût{" "}
+          </p>
           <ul className="flex  choice-list">
             {Object.keys(costByEnergy.lightParis).map((key, index) => (
               <li
