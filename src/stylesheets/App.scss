@@ -84,6 +84,13 @@ html {
 
 a {
   color: white;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: color 0.3s ease;
+  &:hover {
+    color: $lime;
+  }
 }
 
 .darkgreen-bg {

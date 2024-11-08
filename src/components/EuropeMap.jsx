@@ -68,10 +68,12 @@ export default function EuropeMap() {
     }
 
     if (mapRef.current && !mapRef.current._leaflet_id) {
+      L.control;
       const map = L.map(mapRef.current, {
         fullscreenControl: true,
         fullscreenControlOptions: {
-          position: "topleft",
+          position: "topright",
+          content: "&#x26F6;",
         },
       }).setView([48, 10], 4.5);
 
@@ -325,9 +327,9 @@ export default function EuropeMap() {
           </div>
           <p className="">
             En 2022, par <a href="https://ember-energy.org/">Ember Energy</a>,
-            données utilisées par
+            données utilisées par&nbsp;
             <a href="https://ourworldindata.org/grapher/electricity-prod-source-stacked">
-              &nbsp;Our World in Data
+              Our World in Data
             </a>
           </p>
         </div>
