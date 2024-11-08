@@ -31,7 +31,9 @@ function Cost() {
           </p>
         </div>
         <article className="grid-col-12 grid col-gap-20">
-          <div className="test grid-col-sm-12-ls-1-4"></div>
+          <div className=" grid-col-sm-12-ls-1-4">
+            <img src="/images/cost/Paris Vector.png" alt="" />
+          </div>
           <p className="grid-col-sm-12-ls-4-9 data-text">
             Le cout de pour éclairer Paris pendant 1 année est de{" "}
             <span className={`data-value ${getEnergyClass(selectedEnergy)}`}>
@@ -45,20 +47,25 @@ function Cost() {
           <p className="font-size-16">
             En mars 2024, 89 % des citoyens français interrogés ont déclaré que
             les énergies renouvelables (EnR) étaient trop onéreuses, et 60 %
-            estiment qu'elles restent difficiles à installer. Cette perception
-            erronée laisse penser que le coût de construction des
-            infrastructures d'énergie verte freine les avancées écologiques,
-            alors que la réalité est toute autre. Ces infrastructures ne sont en
-            réalité pas plus coûteuses que la construction de centrales
-            nucléaires. De plus, les énergies fossiles sont de plus en plus
-            difficiles à exploiter et comportent des risques élevés. Quant au
-            nucléaire, bien qu'il jouisse d'une meilleure perception que les
-            énergies fossiles, sa compétitivité est à relativiser, comme le
-            montrent les dernières données disponibles.
+            estiment qu'elles restent difficiles à installer (13ᵉ sondage annuel
+            “Les Français et les énergies renouvelables” réalisé par OpinionWay
+            pour Qualit'EnR. 2 500 personnes ont été interrogées selon la
+            méthode des quotas (sexe, âge, région, catégorie
+            socio-professionnelle)). Cette perception erronée laisse penser que
+            le coût de construction des infrastructures d'énergie verte freine
+            les avancées écologiques, alors que la réalité est toute autre. Ces
+            infrastructures ne sont en réalité pas plus coûteuses que la
+            construction de centrales nucléaires. De plus, les énergies fossiles
+            sont de plus en plus difficiles à exploiter et comportent des
+            risques élevés. Quant au nucléaire, bien qu'il jouisse d'une
+            meilleure perception que les énergies fossiles, sa compétitivité est
+            à relativiser, comme le montrent les dernières données disponibles.
           </p>
         </div>
         <article className="grid-col-12 grid col-gap-20">
-          <div className="test grid-col-sm-12-ls-1-4"></div>
+          <div className=" grid-col-sm-12-ls-1-4">
+            <img src="/images/cost/shower.png" alt="" />
+          </div>
           <p className="grid-col-sm-12-ls-4-9 data-text">
             Le cout de pour 1 année de douche quotidienne est de{" "}
             <span className={`data-value ${getEnergyClass(selectedEnergy)}`}>
@@ -84,7 +91,9 @@ function Cost() {
           </p>
         </div>
         <article className="grid-col-12 grid col-gap-20">
-          <div className="test grid-col-sm-12-ls-1-4"></div>
+          <div className=" grid-col-sm-12-ls-1-4">
+            <img src="/images/cost/phone.png" alt="" />
+          </div>
           <p className="grid-col-sm-12-ls-4-9 data-text">
             Le cout de pour recharger son smartphone pendant 1 année est de{" "}
             <span className={`data-value ${getEnergyClass(selectedEnergy)}`}>

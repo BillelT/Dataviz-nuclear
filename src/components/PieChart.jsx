@@ -45,7 +45,7 @@ const PieChart = (dataChart) => {
             total) *
             100,
         ],
-        backgroundColor: ["#dcdc00", "#41cd41", "#3c3d3f", "#a106ef"],
+        backgroundColor: ["#dcdc00", "#41cd41", "#6c7380", "#a106ef"],
         hoverBackgroundColor: ["#dcdc00", "#41cd41", "#3c3d3f", "#a106ef"],
       },
     ],
