@@ -9,6 +9,8 @@ import emissions from "../data/emissions-per-capita2022.json";
 import mix from "../data/mix-energy-type-countries.json";
 import countriesFr from "../data/countries-fr.json";
 import "../stylesheets/DonutChart.scss";
+import "../fullscreen/Control.FullScreen.css";
+import "../fullscreen/Control.FullScreen";
 
 export default function EuropeMap() {
   const mapRef = useRef(null);
@@ -25,7 +27,12 @@ export default function EuropeMap() {
   }
   useEffect(() => {
     if (mapRef.current && !mapRef.current._leaflet_id) {
-      const map = L.map(mapRef.current).setView([48, 10], 4.5);
+      const map = L.map(mapRef.current, {
+        fullscreenControl: true,
+        fullscreenControlOptions: {
+          position: "topleft",
+        },
+      }).setView([48, 10], 4.5);
 
       // Ajout des tuiles OpenStreetMap
       const tileUrl = "https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png";
@@ -33,14 +40,6 @@ export default function EuropeMap() {
         minZoom: 4,
         maxZoom: 8,
       }).addTo(map);
-
-      var myStyle = {
-        color: "#ff7800",
-        stroke: true,
-        weight: 0,
-        opacity: 1,
-        fillOpacity: 0.5,
-      };
 
       let countries = [];
       geojsonFeature["features"].forEach((feature) => {
@@ -74,20 +73,8 @@ export default function EuropeMap() {
         }
       }
 
-      var geojsonMarkerOptions = {
-        radius: 8,
-        fillColor: "#ff7800",
-        color: "#000",
-        weight: 1,
-        opacity: 1,
-        fillOpacity: 0.8,
-      };
-
       console.log(mix["Africa"]);
       L.geoJSON(geojsonFeature, {
-        // pointToLayer: function (feature, latlng) {
-        //   return L.circleMarker(latlng, geojsonMarkerOptions);
-        // },
         style: function (feature) {
           return {
             fillColor: getColor(
@@ -139,82 +126,110 @@ export default function EuropeMap() {
 
   return (
     <>
-      <section className="container map-container grid m-bot-128 col-gap-20">
+      <section
+        className="container map-container grid m-bot-128 col-gap-20"
+        id="carbon"
+      >
         <div className="grid-col-sm-12-ls-1-9">
-          <h2 className="article-title">Title</h2>
+          <h2 className="article-title">CO2 et mix énergétique</h2>
           <p className="article-chapeau p-bot-16">
-            Chapeau Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Architecto incidunt vero quam expedita illo excepturi labore quaerat
-            doloribus temporibus nesciunt sequi vel ab, eveniet doloremque
-            magni, quidem explicabo sint nulla itaque voluptate omnis, obcaecati
-            animi blanditiis. Accusantium nesciunt libero minus.
+            Observe t-on un lien entre les émissions de CO2 par habitant en 2022
+            et la part de production du nucléaire des pays de l&apos;Union
+            Européenne ?
           </p>
           <p className="font-size-16 p-bot-64">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit,
-            excepturi illo? Blanditiis suscipit debitis non, nam aliquid est
-            sint soluta illo quis perspiciatis iusto repellat, doloremque quos,
-            quisquam exercitationem modi porro molestias expedita. Itaque
-            facere, consectetur similique iste placeat natus. Perferendis
-            blanditiis laudantium quam tenetur assumenda deleniti cupiditate
-            consequatur labore?
+            La carte présente les pays de l&apos;Union européenne, colorés en
+            fonction de leur nombre en Tonnes d&apos;émissions de CO2 par
+            habitant en 2022 et au clic sur un pays, sa production électrique
+            par type d&apos;énergie est montrée.
           </p>
         </div>
         <div
-          id="map"
-          className="grid-col-sm-1-12-ls-1-7"
-          ref={mapRef}
+          className="map-container grid-col-sm-1-12-ls-1-7"
           style={{ height: "443px", width: "100%" }}
         >
-          <div id="legend">
-            <table>
-              <thead>
-                <tr>
-                  <th>
-                    {" "}
-                    Émissions de CO₂ par habitant en 2022 dans les pays de
-                    l&apos;Union Européenne (en Tonnes)
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {[...Array(10).keys()].map((i) => (
-                  <tr key={i + 1}>
-                    <td>{i + 1}</td>
-                    <td
-                      className="color"
-                      style={{
-                        backgroundColor: getColor((i + 1) / 10),
-                        opacity: 0.5,
-                      }}
-                    ></td>
+          {" "}
+          <div id="map" ref={mapRef} style={{ height: "100%", width: "100%" }}>
+            <div id="legend">
+              <table>
+                <thead>
+                  <tr>
+                    <th>
+                      {" "}
+                      Émissions de CO₂ par habitant en 2022 dans les pays de
+                      l&apos;Union Européenne (en Tonnes)
+                    </th>
                   </tr>
-                ))}
-                <tr></tr>
-                <tr
-                  style={{
-                    marginTop: "30px",
-                  }}
-                >
-                  {/* <td>Non disponible</td>
+                </thead>
+                <tbody>
+                  {[...Array(10).keys()].map((i) => (
+                    <tr key={i + 1}>
+                      <td>{i + 1}</td>
+                      <td
+                        className="color"
+                        style={{
+                          backgroundColor: getColor((i + 1) / 10),
+                          opacity: 0.5,
+                        }}
+                      ></td>
+                    </tr>
+                  ))}
+                  <tr></tr>
+                  <tr
+                    style={{
+                      marginTop: "30px",
+                    }}
+                  >
+                    {/* <td>Non disponible</td>
                 <td
                 className="color"
                 style={{ backgroundColor: "rgba(0, 0, 0, 100)", opacity: 1 }}
                 ></td> */}
-                </tr>
-              </tbody>
-            </table>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
+          {/* <svg
+          onClick={() => {
+
+          }}
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            fill="#000000"
+            viewBox="0 0 256 256"
+          >
+            <path d="M216,48V96a8,8,0,0,1-16,0V67.31l-42.34,42.35a8,8,0,0,1-11.32-11.32L188.69,56H160a8,8,0,0,1,0-16h48A8,8,0,0,1,216,48ZM98.34,146.34,56,188.69V160a8,8,0,0,0-16,0v48a8,8,0,0,0,8,8H96a8,8,0,0,0,0-16H67.31l42.35-42.34a8,8,0,0,0-11.32-11.32ZM208,152a8,8,0,0,0-8,8v28.69l-42.34-42.35a8,8,0,0,0-11.32,11.32L188.69,200H160a8,8,0,0,0,0,16h48a8,8,0,0,0,8-8V160A8,8,0,0,0,208,152ZM67.31,56H96a8,8,0,0,0,0-16H48a8,8,0,0,0-8,8V96a8,8,0,0,0,16,0V67.31l42.34,42.35a8,8,0,0,0,11.32-11.32Z"></path>
+          </svg> */}
         </div>
+
         <div className="grid-col-sm-1-12-ls-8-12">
-          <h3 className="article-subtitle">Subtitle</h3>
+          <h3 className="article-subtitle">
+            Les différences au niveau européen
+          </h3>
           <p className="font-size-16 p-bot-64">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit,
-            excepturi illo? Blanditiis suscipit debitis non, nam aliquid est
-            sint soluta illo quis perspiciatis iusto repellat, doloremque quos,
-            quisquam exercitationem modi porro molestias expedita. Itaque
-            facere, consectetur similique iste placeat natus. Perferendis
-            blanditiis laudantium quam tenetur assumenda deleniti cupiditate
-            consequatur labore?
+            Le mix énergétique dans sa production d&apos;électricité d&apos;un
+            pays a un impact direct sur ses émissions de CO₂. La politique
+            énergétique soutenue par la France a été majoritairement
+            l&apos;utilisation du nucléaire, qui lui permet d&apos;être moins
+            dépendant des énergies fossiles - particulièrement émettrices de
+            dioxyde de carbone. C&apos;est le pays qui a le plus de nucléaire
+            dans son mix électrique. D&apos;autres pays ne misent pas sur le
+            nucléaire et combinent à la place souvent les énergies renouvelables
+            avec des énergies fossiles (Italie, Espagne, Allemagne…). Les pays
+            émettant le moins de CO₂ / habitant (Suède, Lettonie, Roumanie)
+            utilisent eux majoritairement des énergies renouvelables mais sont
+            également moins . Le nucléaire et les énergies renouvelables
+            (éolien, solaire) permettent de produire de l&apos;électricité avec
+            peu d&apos;émissions de CO₂.
+          </p>
+          <p className="font-size-16 p-bot-64">
+            En analysant cette carte, on observe également la dépendance de
+            nombreux pays aux énergies fossiles (Pologne, Grèce, Italie…). Ce
+            sont des pays moins avancés dans la transition énergétique alors que
+            l&apos;Europe vise “une économie sobre en carbone à l&apos;horizon
+            2050”. En suivant les exemples de la France ou de la Suède
           </p>
         </div>
       </section>

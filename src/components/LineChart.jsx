@@ -154,7 +154,7 @@ const LineChart = () => {
   }, []);
 
   return (
-    <section className="container p-top-bot-128 grid">
+    <section className="container p-top-bot-128 grid" id="yield">
       <div className="graph grid-col-sm-12-ls-1-9">
         <h2 className="article-title">
           Émissions de CO2 (g/kWh) des Différentes Sources Énergétiques au

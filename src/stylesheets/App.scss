@@ -5,11 +5,13 @@
   font-weight: 900;
   src: url(/fonts/Archivo/Archivo-Black.ttf);
 }
+
 @font-face {
   font-family: Archivo;
   font-weight: 700;
   src: url(/fonts/Archivo/Archivo-Bold.ttf);
 }
+
 @font-face {
   font-family: Archivo;
   font-weight: 600;
@@ -22,6 +24,7 @@
   font-weight: 700;
   src: url(/fonts/Nimbus/NimbusSanL-Bol.otf);
 }
+
 @font-face {
   font-family: Nimbus;
   font-weight: 400;
@@ -67,8 +70,8 @@ html {
 
 @media screen and (max-width: 760px) {
   .container {
-    padding-left: 20px;
-    padding-right: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
   }
 }
 
@@ -101,6 +104,11 @@ Fonts
 
 .font-weight-900 {
   font-weight: 900;
+}
+
+.white-bg {
+  background-color: $white;
+  color: $black;
 }
 
 .lime-text {
@@ -231,26 +239,4 @@ Padding
   .grid-col-sm-1-12-ls-8-12 {
     grid-column: 1/13;
   }
-}
-
-.nuclear-color{
-  color: $energy-nuclear;
-}
-.coal-color{
-  color: $energy-coal;
-}
-.eolian-color{
-  color: $energy-wind;
-}
-.solar-color{
-  color: $energy-sunny;
-}
-.gaz-color{
-  color: $energy-gaz;
-}
-.oil-color{
-  color: $energy-oil;
-}
-.result{
-  position: relative;
 }
