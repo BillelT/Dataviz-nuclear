@@ -3,6 +3,7 @@ import Hero from "./components/Hero.jsx";
 import EuropeMap from "./components/EuropeMap.jsx";
 import LineChart from "./components/LineChart.jsx";
 import Cost from "./components/Cost.jsx";
+import Number from "./components/Number.jsx";
 import "./stylesheets/App.scss";
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
     <>
       <Header />
       <Hero />
+      <Number />
       <EuropeMap />
       <LineChart />
       <Cost />
