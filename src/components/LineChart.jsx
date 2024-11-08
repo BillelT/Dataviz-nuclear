@@ -216,6 +216,7 @@ const LineChart = () => {
         <div ref={chartRef}>
           <Line data={chartData} options={options} />
         </div>
+        <p>Source: <a href="https://ourworldindata.org/">Our World in Data</a></p>
       </div>
       <div className="grid row-gap-32 grid-col-12">
         <div className="container-articles grid-col-sm-12-ls-1-9">

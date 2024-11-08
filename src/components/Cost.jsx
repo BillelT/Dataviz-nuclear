@@ -31,8 +31,12 @@ function Cost() {
           </p>
         </div>
         <article className="grid-col-12 grid col-gap-20">
-          <div className=" grid-col-sm-12-ls-1-4">
-            <img src="/images/cost/Paris Vector.png" alt="" />
+          <div className=" grid-col-sm-12-ls-1-4 img-container">
+            <img
+              src="/images/cost/Paris Vector.png"
+              className="cost-images img-container w-100-p"
+              alt="Icône de Paris éclairé"
+            />
           </div>
           <p className="grid-col-sm-12-ls-4-9 data-text">
             Le cout de pour éclairer Paris pendant 1 année est de{" "}
@@ -43,6 +47,22 @@ function Cost() {
             {costByEnergy.lightParis[selectedEnergy].type}.
           </p>
         </article>
+        {/* Liste de choix des énergies avec état interactif */}
+        <div className="choice darkgreen-bg">
+          <ul className="flex  choice-list">
+            {Object.keys(costByEnergy.lightParis).map((key, index) => (
+              <li
+                key={index}
+                className={`lime-bg energy-option ${
+                  selectedEnergy === parseInt(key) ? "selected" : ""
+                }`}
+                onClick={() => handleEnergyClick(parseInt(key))}
+              >
+                {costByEnergy.lightParis[key].type}
+              </li>
+            ))}
+          </ul>
+        </div>
         <div className="grid-col-sm-12-ls-1-9">
           <p className="font-size-16">
             En mars 2024, 89 % des citoyens français interrogés ont déclaré que
@@ -63,8 +83,8 @@ function Cost() {
           </p>
         </div>
         <article className="grid-col-12 grid col-gap-20">
-          <div className=" grid-col-sm-12-ls-1-4">
-            <img src="/images/cost/shower.png" alt="" />
+          <div className=" grid-col-sm-12-ls-1-4 img-container">
+            <img src="/images/cost/shower.png" alt="shower icon" />
           </div>
           <p className="grid-col-sm-12-ls-4-9 data-text">
             Le cout de pour 1 année de douche quotidienne est de{" "}
@@ -91,8 +111,12 @@ function Cost() {
           </p>
         </div>
         <article className="grid-col-12 grid col-gap-20">
-          <div className=" grid-col-sm-12-ls-1-4">
-            <img src="/images/cost/phone.png" alt="" />
+          <div className=" grid-col-sm-12-ls-1-4 img-container">
+            <img
+              src="/images/cost/phone.png"
+              alt="phone icon"
+              className="cost-images img-container"
+            />
           </div>
           <p className="grid-col-sm-12-ls-4-9 data-text">
             Le cout de pour recharger son smartphone pendant 1 année est de{" "}
@@ -103,22 +127,6 @@ function Cost() {
             {costByEnergy.yearPhone[selectedEnergy].type}.
           </p>
         </article>
-        {/* Liste de choix des énergies avec état interactif */}
-        <div className="choice darkgreen-bg">
-          <ul className="flex  choice-list">
-            {Object.keys(costByEnergy.lightParis).map((key, index) => (
-              <li
-                key={index}
-                className={`lime-bg energy-option ${
-                  selectedEnergy === parseInt(key) ? "selected" : ""
-                }`}
-                onClick={() => handleEnergyClick(parseInt(key))}
-              >
-                {costByEnergy.lightParis[key].type}
-              </li>
-            ))}
-          </ul>
-        </div>
       </section>
     </>
   );
