@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import costByEnergy from "../data/costByEnergy.json";
 import "../stylesheets/Cost.scss";
+import gsap from "gsap";
 
 function Cost() {
   // État pour l'énergie sélectionnée (index: 1 pour pétrole, 2 pour charbon, etc.)
@@ -8,6 +9,20 @@ function Cost() {
 
   // Fonction de sélection d'énergie
   const handleEnergyClick = (index) => {
+    const changingData = document.getElementsByClassName("changing-data");
+
+    gsap.fromTo(
+      ".changing-data",
+      {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        duration: 0.4,
+        ease: "power1.Out",
+      }
+    );
+
     setSelectedEnergy(index); // Met à jour l'énergie sélectionnée uniquement pour la liste
   };
 
@@ -40,11 +55,17 @@ function Cost() {
           </div>
           <p className="grid-col-sm-12-ls-4-9 data-text">
             Le cout de pour éclairer Paris pendant 1 année est de{" "}
-            <span className={`data-value ${getEnergyClass(selectedEnergy)}`}>
+            <span
+              className={`changing-data data-value ${getEnergyClass(
+                selectedEnergy
+              )}`}
+            >
               {costByEnergy.lightParis[selectedEnergy].cost}€
             </span>{" "}
             en produisant cette énergie avec{" "}
-            {costByEnergy.lightParis[selectedEnergy].type}.
+            <span className="changing-data">
+              {costByEnergy.lightParis[selectedEnergy].type}.
+            </span>
           </p>
         </article>
         {/* Liste de choix des énergies avec état interactif */}
@@ -91,11 +112,17 @@ function Cost() {
           </div>
           <p className="grid-col-sm-12-ls-4-9 data-text">
             Le cout de pour 1 année de douche quotidienne est de{" "}
-            <span className={`data-value ${getEnergyClass(selectedEnergy)}`}>
+            <span
+              className={` changing-data data-value ${getEnergyClass(
+                selectedEnergy
+              )}`}
+            >
               {costByEnergy.yearShower[selectedEnergy].cost}€
             </span>{" "}
             en produisant cette énergie avec{" "}
-            {costByEnergy.yearShower[selectedEnergy].type}.
+            <span className="changing-data">
+              {costByEnergy.yearShower[selectedEnergy].type}.
+            </span>
           </p>
         </article>
         <div className="grid-col-sm-12-ls-1-9">
@@ -123,11 +150,17 @@ function Cost() {
           </div>
           <p className="grid-col-sm-12-ls-4-9 data-text">
             Le cout de pour recharger son smartphone pendant 1 année est de{" "}
-            <span className={`data-value ${getEnergyClass(selectedEnergy)}`}>
+            <span
+              className={`changing-data data-value ${getEnergyClass(
+                selectedEnergy
+              )}`}
+            >
               {costByEnergy.yearPhone[selectedEnergy].cost}€
             </span>{" "}
             en produisant cette énergie avec{" "}
-            {costByEnergy.yearPhone[selectedEnergy].type}.
+            <span className="changing-data">
+              {costByEnergy.yearPhone[selectedEnergy].type}.
+            </span>
           </p>
         </article>
       </section>
