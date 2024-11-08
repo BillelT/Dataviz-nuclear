@@ -31,8 +31,12 @@ function Cost() {
           </p>
         </div>
         <article className="grid-col-12 grid col-gap-20">
-          <div className=" grid-col-sm-12-ls-1-4">
-            <img src="/images/cost/Paris Vector.png" alt="" />
+          <div className=" grid-col-sm-12-ls-1-4 img-container">
+            <img
+              src="/images/cost/Paris Vector.png"
+              className="cost-images img-container w-100-p"
+              alt="Icône de Paris éclairé"
+            />
           </div>
           <p className="grid-col-sm-12-ls-4-9 data-text">
             Le cout de pour éclairer Paris pendant 1 année est de{" "}
@@ -63,8 +67,8 @@ function Cost() {
           </p>
         </div>
         <article className="grid-col-12 grid col-gap-20">
-          <div className=" grid-col-sm-12-ls-1-4">
-            <img src="/images/cost/shower.png" alt="" />
+          <div className=" grid-col-sm-12-ls-1-4 img-container">
+            <img src="/images/cost/shower.png" alt="shower icon" />
           </div>
           <p className="grid-col-sm-12-ls-4-9 data-text">
             Le cout de pour 1 année de douche quotidienne est de{" "}
@@ -91,8 +95,12 @@ function Cost() {
           </p>
         </div>
         <article className="grid-col-12 grid col-gap-20">
-          <div className=" grid-col-sm-12-ls-1-4">
-            <img src="/images/cost/phone.png" alt="" />
+          <div className=" grid-col-sm-12-ls-1-4 img-container">
+            <img
+              src="/images/cost/phone.png"
+              alt="phone icon"
+              className="cost-images img-container"
+            />
           </div>
           <p className="grid-col-sm-12-ls-4-9 data-text">
             Le cout de pour recharger son smartphone pendant 1 année est de{" "}

@@ -16,9 +16,8 @@
   position: sticky;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
-  bottom: 0%;
+  top: 20%;
   margin: 0 auto;
-  margin-top: 10vh;
   padding: 12px 32px;
   grid-column: 1/13;
   // width: calc(100% - 180px);
@@ -78,4 +77,18 @@
 .energy-style-6 {
   color: #12de9a; // Couleur pour éolien
   font-size: 1.15em;
+}
+
+.img-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.cost-images {
+  object-fit: contain;
+  object-position: center;
+}
+
+.w-100-p {
+  width: 100%;
 }
