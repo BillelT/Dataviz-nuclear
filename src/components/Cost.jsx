@@ -47,6 +47,22 @@ function Cost() {
             {costByEnergy.lightParis[selectedEnergy].type}.
           </p>
         </article>
+        {/* Liste de choix des énergies avec état interactif */}
+        <div className="choice darkgreen-bg">
+          <ul className="flex  choice-list">
+            {Object.keys(costByEnergy.lightParis).map((key, index) => (
+              <li
+                key={index}
+                className={`lime-bg energy-option ${
+                  selectedEnergy === parseInt(key) ? "selected" : ""
+                }`}
+                onClick={() => handleEnergyClick(parseInt(key))}
+              >
+                {costByEnergy.lightParis[key].type}
+              </li>
+            ))}
+          </ul>
+        </div>
         <div className="grid-col-sm-12-ls-1-9">
           <p className="font-size-16">
             En mars 2024, 89 % des citoyens français interrogés ont déclaré que
@@ -111,22 +127,6 @@ function Cost() {
             {costByEnergy.yearPhone[selectedEnergy].type}.
           </p>
         </article>
-        {/* Liste de choix des énergies avec état interactif */}
-        <div className="choice darkgreen-bg">
-          <ul className="flex  choice-list">
-            {Object.keys(costByEnergy.lightParis).map((key, index) => (
-              <li
-                key={index}
-                className={`lime-bg energy-option ${
-                  selectedEnergy === parseInt(key) ? "selected" : ""
-                }`}
-                onClick={() => handleEnergyClick(parseInt(key))}
-              >
-                {costByEnergy.lightParis[key].type}
-              </li>
-            ))}
-          </ul>
-        </div>
       </section>
     </>
   );

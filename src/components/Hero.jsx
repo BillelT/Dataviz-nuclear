@@ -3,12 +3,15 @@ import "../stylesheets/Hero.scss";
 import { gsap } from "gsap";
 import SplitType from "split-type";
 
+gsap.registerPlugin();
+
 function Hero() {
   const textToSplit = useRef(null);
-  const leRef = useRef(null);
+  const le = useRef(null);
+  const solve = useRef(null);
 
   useEffect(() => {
-    if (textToSplit.current && leRef.current) {
+    if (textToSplit.current && le.current) {
       const text = new SplitType(textToSplit.current, { types: "chars" });
 
       const tl = gsap.timeline();
@@ -21,13 +24,28 @@ function Hero() {
         ease: "power2.out",
         delay: 0.5,
       });
+
+      gsap.fromTo(
+        [le.current, solve.current],
+        {
+          y: 50,
+          opacity: 0,
+        },
+        {
+          duration: 0.8,
+          y: 0,
+          opacity: 1,
+          ease: "power2.out",
+          delay: 0.5,
+        }
+      );
     }
-  }, []);
+  }, [textToSplit, le]);
 
   return (
     <section className="darkgreen-bg container flex flex-center flex-d-col p-top-bot-256 row-gap-32">
       <div className="span-container text-center hero-text">
-        <span className="" ref={leRef}>
+        <span className="le" ref={le}>
           Le
         </span>
       </div>
@@ -38,7 +56,9 @@ function Hero() {
           </span>
         </h1>
       </div>
-      <span className="text-center hero-text">est-il la solution ?</span>
+      <span className="text-center hero-text" ref={solve}>
+        est-il la solution ?
+      </span>
     </section>
   );
 }
